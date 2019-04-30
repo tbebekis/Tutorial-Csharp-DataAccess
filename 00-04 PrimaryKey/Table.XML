@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Demo" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Demo">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" />
+                <xs:element name="Name" type="xs:string" />
+                <xs:element name="Date" type="xs:dateTime" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//Demo" />
+        <xs:field xpath="ID" />
+        <xs:field xpath="Name" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <Demo>
+    <ID>1</ID>
+    <Name>Name_1</Name>
+    <Date>2009-03-24T00:00:00+02:00</Date>
+  </Demo>
+  <Demo>
+    <ID>2</ID>
+    <Name>Name_2</Name>
+    <Date>2009-03-25T00:00:00+02:00</Date>
+  </Demo>
+  <Demo>
+    <ID>3</ID>
+    <Name>Name_3</Name>
+    <Date>2009-03-26T00:00:00+02:00</Date>
+  </Demo>
+  <Demo>
+    <ID>4</ID>
+    <Name>Name_4</Name>
+    <Date>2009-03-27T00:00:00+02:00</Date>
+  </Demo>
+  <Demo>
+    <ID>5</ID>
+    <Name>Name_5</Name>
+    <Date>2009-03-28T00:00:00+02:00</Date>
+  </Demo>
+  <Demo>
+    <ID>6</ID>
+    <Name>Name_6</Name>
+    <Date>2009-03-29T00:00:00+02:00</Date>
+  </Demo>
+  <Demo>
+    <ID>7</ID>
+    <Name>Name_7</Name>
+    <Date>2009-03-30T00:00:00+03:00</Date>
+  </Demo>
+  <Demo>
+    <ID>8</ID>
+    <Name>Name_8</Name>
+    <Date>2009-03-31T00:00:00+03:00</Date>
+  </Demo>
+  <Demo>
+    <ID>9</ID>
+    <Name>Name_9</Name>
+    <Date>2009-04-01T00:00:00+03:00</Date>
+  </Demo>
+  <Demo>
+    <ID>10</ID>
+    <Name>Name_10</Name>
+    <Date>2009-04-02T00:00:00+03:00</Date>
+  </Demo>
+</NewDataSet>
