@@ -2,75 +2,75 @@ C# Data access
 ===========
  
 - [C# Data access](#c-data-access)
-  - [ADO.NET](#adonet)
-    - [In-memory data manipulation](#in-memory-data-manipulation)
-      - [DataTable, DataColumnCollection and DataColumn class: defining table schema](#datatable-datacolumncollection-and-datacolumn-class-defining-table-schema)
-      - [DataRowCollection and DataRow class: adding data to a table](#datarowcollection-and-datarow-class-adding-data-to-a-table)
-      - [Iterating a DataTable and reading data](#iterating-a-datatable-and-reading-data)
-      - [Iterating a table through a DataTableReader](#iterating-a-table-through-a-datatablereader)
-      - [DBNull values](#dbnull-values)
-      - [DataTable events](#datatable-events)
-      - [The state of a row: the DataRowState enum type](#the-state-of-a-row-the-datarowstate-enum-type)
-      - [The DataTable.AcceptChanges() and RejectChanges() methods](#the-datatableacceptchanges-and-rejectchanges-methods)
-      - [The DataTable.GetChanges() method](#the-datatablegetchanges-method)
-      - [DataColumn constraints: the ConstraintCollection class](#datacolumn-constraints-the-constraintcollection-class)
-      - [Unique constraints: the UniqueConstraint class](#unique-constraints-the-uniqueconstraint-class)
-      - [DataTable.PrimaryKey and primary key constraints](#datatableprimarykey-and-primary-key-constraints)
-      - [DataRow editing methods and DataRow versions](#datarow-editing-methods-and-datarow-versions)
-      - [Locating rows in a DataTable](#locating-rows-in-a-datatable)
-      - [Computing values on multiple rows](#computing-values-on-multiple-rows)
-      - [Saving and loading data tables](#saving-and-loading-data-tables)
-      - [DataTable.Copy() and Clone() methods](#datatablecopy-and-clone-methods)
-      - [DataView class: DataTable.DefaultView property](#dataview-class-datatabledefaultview-property)
-      - [The DataSet class](#the-dataset-class)
-      - [Foreign key constraints: the ForeignKeyConstraint class](#foreign-key-constraints-the-foreignkeyconstraint-class)
-      - [Foreign key constraing rules](#foreign-key-constraing-rules)
-      - [DataRelation class: a master-detail relationship](#datarelation-class-a-master-detail-relationship)
-    - [Accessing datasources](#accessing-datasources)
-      - [Sample database](#sample-database)
-      - [Data Providers](#data-providers)
-      - [Data types](#data-types)
-      - [Provider neutral data access and Provider Factories](#provider-neutral-data-access-and-provider-factories)
-      - [Connection strings](#connection-strings)
-      - [OleDb connection string](#oledb-connection-string)
-      - [Other connection string examples](#other-connection-string-examples)
-      - [Connection string Builders](#connection-string-builders)
-      - [Connection strings and configuration files](#connection-strings-and-configuration-files)
-      - [The DbConnection class](#the-dbconnection-class)
-      - [Connection pooling](#connection-pooling)
-      - [The DbCommand class](#the-dbcommand-class)
-      - [Retrieving data: DbCommand.ExecuteScalar()](#retrieving-data-dbcommandexecutescalar)
-      - [Retrieving data: the DbDataReader class](#retrieving-data-the-dbdatareader-class)
-      - [Retrieving data: the DbDataAdapter class](#retrieving-data-the-dbdataadapter-class)
-      - [Table and column mapping: DataTableMapping and DataColumnMapping class](#table-and-column-mapping-datatablemapping-and-datacolumnmapping-class)
-      - [The DbDataAdapter.FillSchema() method](#the-dbdataadapterfillschema-method)
-      - [Executing DbCommand(s) which modify data](#executing-dbcommands-which-modify-data)
-      - [Transactions and the DbTransaction class](#transactions-and-the-dbtransaction-class)
-      - [Posting changes back to the datasource with the DbDataAdapter.Update() method](#posting-changes-back-to-the-datasource-with-the-dbdataadapterupdate-method)
-      - [Parameterized commands: DbParameterCollection and DbParameter class](#parameterized-commands-dbparametercollection-and-dbparameter-class)
-      - [A helper library](#a-helper-library)
-      - [Executing DDL (Data Definition Language) statements](#executing-ddl-data-definition-language-statements)
-      - [Using stored procedures](#using-stored-procedures)
-      - [Reading and writing BLOB data](#reading-and-writing-blob-data)
-      - [Reading database schema information](#reading-database-schema-information)
-      - [Creating connections with the Server Explorer window of the MS Visual Studio](#creating-connections-with-the-server-explorer-window-of-the-ms-visual-studio)
-      - [Typed datasets](#typed-datasets)
-      - [The IISAM of the Jet.OLEDB.4.0 OLEDB provider](#the-iisam-of-the-jetoledb40-oledb-provider)
-    - [Windows Forms data binding](#windows-forms-data-binding)
-      - [Simple binding](#simple-binding)
-      - [Change notification requirements for simple data binding](#change-notification-requirements-for-simple-data-binding)
-      - [Complex (or list-based) binding](#complex-or-list-based-binding)
-      - [Change notification requirements for complex data binding](#change-notification-requirements-for-complex-data-binding)
-      - [Windows Forms binding mechanism: binding contexts and binding managers](#windows-forms-binding-mechanism-binding-contexts-and-binding-managers)
-      - [The BindingSource component](#the-bindingsource-component)
-      - [BindingSource: binding a BindingSource to a type](#bindingsource-binding-a-bindingsource-to-a-type)
-      - [BindingSource: using the AddingNew event and the AddNew() method](#bindingsource-using-the-addingnew-event-and-the-addnew-method)
-      - [BindingSource: a master-detail example](#bindingsource-a-master-detail-example)
-      - [The BindingNavigator control](#the-bindingnavigator-control)
-      - [Lookup ComboBox and ListBox](#lookup-combobox-and-listbox)
-      - [The DataGridView control (.Net 2.0 and later, not available to Compact Framework)](#the-datagridview-control-net-20-and-later-not-available-to-compact-framework)
-      - [The DataGrid control (available to Compact Framework too)](#the-datagrid-control-available-to-compact-framework-too)
-      - [](#)
+	- [ADO.NET](#adonet)
+		- [In-memory data manipulation](#in-memory-data-manipulation)
+			- [DataTable, DataColumnCollection and DataColumn class: defining table schema](#datatable-datacolumncollection-and-datacolumn-class-defining-table-schema)
+			- [DataRowCollection and DataRow class: adding data to a table](#datarowcollection-and-datarow-class-adding-data-to-a-table)
+			- [Iterating a DataTable and reading data](#iterating-a-datatable-and-reading-data)
+			- [Iterating a table through a DataTableReader](#iterating-a-table-through-a-datatablereader)
+			- [DBNull values](#dbnull-values)
+			- [DataTable events](#datatable-events)
+			- [The state of a row: the DataRowState enum type](#the-state-of-a-row-the-datarowstate-enum-type)
+			- [The DataTable.AcceptChanges() and RejectChanges() methods](#the-datatableacceptchanges-and-rejectchanges-methods)
+			- [The DataTable.GetChanges() method](#the-datatablegetchanges-method)
+			- [DataColumn constraints: the ConstraintCollection class](#datacolumn-constraints-the-constraintcollection-class)
+			- [Unique constraints: the UniqueConstraint class](#unique-constraints-the-uniqueconstraint-class)
+			- [DataTable.PrimaryKey and primary key constraints](#datatableprimarykey-and-primary-key-constraints)
+			- [DataRow editing methods and DataRow versions](#datarow-editing-methods-and-datarow-versions)
+			- [Locating rows in a DataTable](#locating-rows-in-a-datatable)
+			- [Computing values on multiple rows](#computing-values-on-multiple-rows)
+			- [Saving and loading data tables](#saving-and-loading-data-tables)
+			- [DataTable.Copy() and Clone() methods](#datatablecopy-and-clone-methods)
+			- [DataView class: DataTable.DefaultView property](#dataview-class-datatabledefaultview-property)
+			- [The DataSet class](#the-dataset-class)
+			- [Foreign key constraints: the ForeignKeyConstraint class](#foreign-key-constraints-the-foreignkeyconstraint-class)
+			- [Foreign key constraing rules](#foreign-key-constraing-rules)
+			- [DataRelation class: a master-detail relationship](#datarelation-class-a-master-detail-relationship)
+		- [Accessing datasources](#accessing-datasources)
+			- [Sample database](#sample-database)
+			- [Data Providers](#data-providers)
+			- [Data types](#data-types)
+			- [Provider neutral data access and Provider Factories](#provider-neutral-data-access-and-provider-factories)
+			- [Connection strings](#connection-strings)
+			- [OleDb connection string](#oledb-connection-string)
+			- [Other connection string examples](#other-connection-string-examples)
+			- [Connection string Builders](#connection-string-builders)
+			- [Connection strings and configuration files](#connection-strings-and-configuration-files)
+			- [The DbConnection class](#the-dbconnection-class)
+			- [Connection pooling](#connection-pooling)
+			- [The DbCommand class](#the-dbcommand-class)
+			- [Retrieving data: DbCommand.ExecuteScalar()](#retrieving-data-dbcommandexecutescalar)
+			- [Retrieving data: the DbDataReader class](#retrieving-data-the-dbdatareader-class)
+			- [Retrieving data: the DbDataAdapter class](#retrieving-data-the-dbdataadapter-class)
+			- [Table and column mapping: DataTableMapping and DataColumnMapping class](#table-and-column-mapping-datatablemapping-and-datacolumnmapping-class)
+			- [The DbDataAdapter.FillSchema() method](#the-dbdataadapterfillschema-method)
+			- [Executing DbCommand(s) which modify data](#executing-dbcommands-which-modify-data)
+			- [Transactions and the DbTransaction class](#transactions-and-the-dbtransaction-class)
+			- [Posting changes back to the datasource with the DbDataAdapter.Update() method](#posting-changes-back-to-the-datasource-with-the-dbdataadapterupdate-method)
+			- [Parameterized commands: DbParameterCollection and DbParameter class](#parameterized-commands-dbparametercollection-and-dbparameter-class)
+			- [A helper library](#a-helper-library)
+			- [Executing DDL (Data Definition Language) statements](#executing-ddl-data-definition-language-statements)
+			- [Using stored procedures](#using-stored-procedures)
+			- [Reading and writing BLOB data](#reading-and-writing-blob-data)
+			- [Reading database schema information](#reading-database-schema-information)
+			- [Creating connections with the Server Explorer window of the MS Visual Studio](#creating-connections-with-the-server-explorer-window-of-the-ms-visual-studio)
+			- [Typed datasets](#typed-datasets)
+			- [The IISAM of the Jet.OLEDB.4.0 OLEDB provider](#the-iisam-of-the-jetoledb40-oledb-provider)
+		- [Windows Forms data binding](#windows-forms-data-binding)
+			- [Simple binding](#simple-binding)
+			- [Change notification requirements for simple data binding](#change-notification-requirements-for-simple-data-binding)
+			- [Complex (or list-based) binding](#complex-or-list-based-binding)
+			- [Change notification requirements for complex data binding](#change-notification-requirements-for-complex-data-binding)
+			- [Windows Forms binding mechanism: binding contexts and binding managers](#windows-forms-binding-mechanism-binding-contexts-and-binding-managers)
+			- [The BindingSource component](#the-bindingsource-component)
+			- [BindingSource: binding a BindingSource to a type](#bindingsource-binding-a-bindingsource-to-a-type)
+			- [BindingSource: using the AddingNew event and the AddNew() method](#bindingsource-using-the-addingnew-event-and-the-addnew-method)
+			- [BindingSource: a master-detail example](#bindingsource-a-master-detail-example)
+			- [The BindingNavigator control](#the-bindingnavigator-control)
+			- [Lookup ComboBox and ListBox](#lookup-combobox-and-listbox)
+			- [The DataGridView control (.Net 2.0 and later, not available to Compact Framework)](#the-datagridview-control-net-20-and-later-not-available-to-compact-framework)
+			- [The DataGrid control (available to Compact Framework too)](#the-datagrid-control-available-to-compact-framework-too)
+			- [](#)
 
 
 ADO.NET
@@ -113,7 +113,7 @@ DataTable class represents a table of data. That is something having columns and
          public string Namespace { get; set; }
          public DataRelationCollection ParentRelations { get; }
          public string Prefix { get; set; }
-         public DataColumn\[\] PrimaryKey { get; set; }
+         public DataColumn[] PrimaryKey { get; set; }
          public SerializationFormat RemotingFormat { get; set; }
          public DataRowCollection Rows { get; }
          public override ISite Site { get; set; }
@@ -143,14 +143,14 @@ DataTable class represents a table of data. That is something having columns and
          public DataTable GetChanges();
          public DataTable GetChanges(DataRowState rowStates);
          public static XmlSchemaComplexType GetDataTableSchema(XmlSchemaSet schemaSet);
-         public DataRow\[\] GetErrors();
+         public DataRow[] GetErrors();
          public virtual void GetObjectData(SerializationInfo info, StreamingContext context);
          public void ImportRow(DataRow row);
          public void Load(IDataReader reader);
          public void Load(IDataReader reader, LoadOption loadOption);
          public virtual void Load(IDataReader reader, LoadOption loadOption, FillErrorEventHandler errorHandler);
-         public DataRow LoadDataRow(object\[\] values, bool fAcceptChanges);
-         public DataRow LoadDataRow(object\[\] values, LoadOption loadOption);
+         public DataRow LoadDataRow(object[] values, bool fAcceptChanges);
+         public DataRow LoadDataRow(object[] values, LoadOption loadOption);
          public void Merge(DataTable table);
          public void Merge(DataTable table, bool preserveChanges);
          public void Merge(DataTable table, bool preserveChanges, MissingSchemaAction missingSchemaAction);
@@ -165,10 +165,10 @@ DataTable class represents a table of data. That is something having columns and
          public void ReadXmlSchema(XmlReader reader);
          public void RejectChanges();
          public virtual void Reset();
-         public DataRow\[\] Select();
-         public DataRow\[\] Select(string filterExpression);
-         public DataRow\[\] Select(string filterExpression, string sort);
-         public DataRow\[\] Select(string filterExpression, string sort, DataViewRowState recordStates);
+         public DataRow[] Select();
+         public DataRow[] Select(string filterExpression);
+         public DataRow[] Select(string filterExpression, string sort);
+         public DataRow[] Select(string filterExpression, string sort, DataViewRowState recordStates);
          public override string ToString();
          public void WriteXml(Stream stream);
          public void WriteXml(string fileName);
@@ -202,8 +202,8 @@ DataTable provides the property Columns of type DataColumnCollection.
 
     public sealed class DataColumnCollection : InternalDataCollectionBase
      {
-         public DataColumn this\[int index\] { get; }
-         public DataColumn this\[string name\] { get; }
+         public DataColumn this[int index] { get; }
+         public DataColumn this[string name] { get; }
  
          public event CollectionChangeEventHandler CollectionChanged;
  
@@ -212,11 +212,11 @@ DataTable provides the property Columns of type DataColumnCollection.
          public DataColumn Add(string columnName);
          public DataColumn Add(string columnName, Type type);
          public DataColumn Add(string columnName, Type type, string expression);
-         public void AddRange(DataColumn\[\] columns);
+         public void AddRange(DataColumn[] columns);
          public bool CanRemove(DataColumn column);
          public void Clear();
          public bool Contains(string name);
-         public void CopyTo(DataColumn\[\] array, int index);
+         public void CopyTo(DataColumn[] array, int index);
          public int IndexOf(DataColumn column);
          public int IndexOf(string columnName);
          public void Remove(DataColumn column);
@@ -302,17 +302,17 @@ DataTable has the Rows property of type DataRowCollection.
      {
          public override int Count { get; }
  
-         public DataRow this\[int index\] { get; }
+         public DataRow this[int index] { get; }
  
          public void Add(DataRow row);
-         public DataRow Add(params object\[\] values);
+         public DataRow Add(params object[] values);
          public void Clear();
          public bool Contains(object key);
-         public bool Contains(object\[\] keys);
+         public bool Contains(object[] keys);
          public override void CopyTo(Array ar, int index);
-         public void CopyTo(DataRow\[\] array, int index);
+         public void CopyTo(DataRow[] array, int index);
          public DataRow Find(object key);
-         public DataRow Find(object\[\] keys);
+         public DataRow Find(object[] keys);
          public override IEnumerator GetEnumerator();
          public int IndexOf(DataRow row);
          public void InsertAt(DataRow row, int pos);
@@ -328,17 +328,17 @@ Rows is a collection of DataRow objects.
     public class DataRow
      {
          public bool HasErrors { get; }
-         public object\[\] ItemArray { get; set; }
+         public object[] ItemArray { get; set; }
          public string RowError { get; set; }
          public DataRowState RowState { get; }
          public DataTable Table { get; }
  
-         public object this\[DataColumn column\] { get; set; }
-         public object this\[int columnIndex\] { get; set; }
-         public object this\[string columnName\] { get; set; }
-         public object this\[DataColumn column, DataRowVersion version\] { get; }
-         public object this\[int columnIndex, DataRowVersion version\] { get; }
-         public object this\[string columnName, DataRowVersion version\] { get; }
+         public object this[DataColumn column] { get; set; }
+         public object this[int columnIndex] { get; set; }
+         public object this[string columnName] { get; set; }
+         public object this[DataColumn column, DataRowVersion version] { get; }
+         public object this[int columnIndex, DataRowVersion version] { get; }
+         public object this[string columnName, DataRowVersion version] { get; }
  
          public void AcceptChanges();
          public void BeginEdit();
@@ -346,22 +346,22 @@ Rows is a collection of DataRow objects.
          public void ClearErrors();
          public void Delete();
          public void EndEdit();
-         public DataRow\[\] GetChildRows(DataRelation relation);
-         public DataRow\[\] GetChildRows(string relationName);
-         public DataRow\[\] GetChildRows(DataRelation relation, DataRowVersion version);
-         public DataRow\[\] GetChildRows(string relationName, DataRowVersion version);
+         public DataRow[] GetChildRows(DataRelation relation);
+         public DataRow[] GetChildRows(string relationName);
+         public DataRow[] GetChildRows(DataRelation relation, DataRowVersion version);
+         public DataRow[] GetChildRows(string relationName, DataRowVersion version);
          public string GetColumnError(DataColumn column);
          public string GetColumnError(int columnIndex);
          public string GetColumnError(string columnName);
-         public DataColumn\[\] GetColumnsInError();
+         public DataColumn[] GetColumnsInError();
          public DataRow GetParentRow(DataRelation relation);
          public DataRow GetParentRow(string relationName);
          public DataRow GetParentRow(DataRelation relation, DataRowVersion version);
          public DataRow GetParentRow(string relationName, DataRowVersion version);
-         public DataRow\[\] GetParentRows(DataRelation relation);
-         public DataRow\[\] GetParentRows(string relationName);
-         public DataRow\[\] GetParentRows(DataRelation relation, DataRowVersion version);
-         public DataRow\[\] GetParentRows(string relationName, DataRowVersion version);
+         public DataRow[] GetParentRows(DataRelation relation);
+         public DataRow[] GetParentRows(string relationName);
+         public DataRow[] GetParentRows(DataRelation relation, DataRowVersion version);
+         public DataRow[] GetParentRows(string relationName, DataRowVersion version);
          public bool HasVersion(DataRowVersion version);
          public bool IsNull(DataColumn column);
          public bool IsNull(int columnIndex);
@@ -392,8 +392,8 @@ DataRow is where data reside. Here is how to add rows in a DataTable.
      {
          row = table.NewRow();                   // DataTable.NewRow() creates a new row. The row is not added to the rows.
          
-         row\[0\] = i;                             // accessing a column by its index (DataColumn.Ordinal property)                 
-         row\["Name"\] = "Name\_" + i.ToString();   // accdessing a column by its ColumnName
+         row[0] = i;                             // accessing a column by its index (DataColumn.Ordinal property)                 
+         row["Name"] = "Name_" + i.ToString();   // accdessing a column by its ColumnName
  
          table.Rows.Add(row);                    // DataTable.Rows.Add() adds a row to the Rows.
      }
@@ -410,7 +410,7 @@ The next example is a variation of adding data to a table, using an overloaded v
  
      for (int i = 1; i < 6; i++)
      {
-         table.Rows.Add( new object\[\] { null, "Name\_" + i.ToString() } );
+         table.Rows.Add( new object[] { null, "Name_" + i.ToString() } );
      } 
  
  
@@ -443,7 +443,7 @@ Data can be read in many ways. One way is to typecast the value returned by the 
  
      for (int i = 0; i < table.Rows.Count; i++)
      {
-         ID = (int)table.Rows\[i\]\["ID"\];
+         ID = (int)table.Rows[i]["ID"];
          ...
      }
      
@@ -456,9 +456,9 @@ The above can be written as
      
      for (int i = 0; i < table.Rows.Count; i++)
      {
-         row = table.Rows\[i\];
+         row = table.Rows[i];
          
-         ID = (int)row\["ID"\];
+         ID = (int)row["ID"];
          ...
      }
      
@@ -482,7 +482,7 @@ A DataTableReader object can be used to iterate a table.
     public sealed class DataTableReader : DbDataReader
      {    
          public DataTableReader(DataTable dataTable);
-         public DataTableReader(DataTable\[\] dataTables);
+         public DataTableReader(DataTable[] dataTables);
  
          public override int Depth { get; }
          public override int FieldCount { get; }
@@ -490,15 +490,15 @@ A DataTableReader object can be used to iterate a table.
          public override bool IsClosed { get; }
          public override int RecordsAffected { get; }
  
-         public override object this\[int ordinal\] { get; }
-         public override object this\[string name\] { get; }
+         public override object this[int ordinal] { get; }
+         public override object this[string name] { get; }
  
          public override void Close();
          public override bool GetBoolean(int ordinal);
          public override byte GetByte(int ordinal);
-         public override long GetBytes(int ordinal, long dataIndex, byte\[\] buffer, int bufferIndex, int length);
+         public override long GetBytes(int ordinal, long dataIndex, byte[] buffer, int bufferIndex, int length);
          public override char GetChar(int ordinal);
-         public override long GetChars(int ordinal, long dataIndex, char\[\] buffer, int bufferIndex, int length);
+         public override long GetChars(int ordinal, long dataIndex, char[] buffer, int bufferIndex, int length);
          public override string GetDataTypeName(int ordinal);
          public override DateTime GetDateTime(int ordinal);
          public override decimal GetDecimal(int ordinal);
@@ -514,11 +514,11 @@ A DataTableReader object can be used to iterate a table.
          public override int GetOrdinal(string name);
          public override Type GetProviderSpecificFieldType(int ordinal);
          public override object GetProviderSpecificValue(int ordinal);
-         public override int GetProviderSpecificValues(object\[\] values);
+         public override int GetProviderSpecificValues(object[] values);
          public override DataTable GetSchemaTable();
          public override string GetString(int ordinal);
          public override object GetValue(int ordinal);
-         public override int GetValues(object\[\] values);
+         public override int GetValues(object[] values);
          public override bool IsDBNull(int ordinal);
          public override bool NextResult();
          public override bool Read();        
@@ -532,7 +532,7 @@ The DataTableReader class provides read-only and forward-only access to a table 
      {
          while (reader.Read())
          {
-             ID = (int)reader\["ID"\];
+             ID = (int)reader["ID"];
              ...
          }
      }
@@ -545,7 +545,7 @@ or using an enumerator (foreach). The DbDataRecord class is the type the DataTab
      {
          foreach (DbDataRecord record in reader)
          {
-             ID = (int)record\["ID"\];
+             ID = (int)record["ID"];
              ...
          }
      }
@@ -572,9 +572,9 @@ Caution is required when reading data values because of the possibility of a nul
 
 Here is an example
 
-    table.Rows\[0\]\["Name"\] = DBNull.Value;
+    table.Rows[0]["Name"] = DBNull.Value;
  
-     if (table.Rows\[0\]\["Name"\] == DBNull.Value) // or if (DBNull.Value.Equals(table.Rows\[0\]\["Name"\]))
+     if (table.Rows[0]["Name"] == DBNull.Value) // or if (DBNull.Value.Equals(table.Rows[0]["Name"]))
      {
          MessageBox.Show("NULL");
      }
@@ -587,26 +587,26 @@ DataTable class provides a number of events in order to notify a client code for
 
 Here is how to link to those events.
 
-    table.ColumnChanging += new DataColumnChangeEventHandler(Table\_ColumnChanging);
-     table.ColumnChanged += new DataColumnChangeEventHandler(Table\_ColumnChanged);
+    table.ColumnChanging += new DataColumnChangeEventHandler(Table_ColumnChanging);
+     table.ColumnChanged += new DataColumnChangeEventHandler(Table_ColumnChanged);
  
-     table.RowChanging += new DataRowChangeEventHandler(Table\_RowChanging);
-     table.RowChanged += new DataRowChangeEventHandler(Table\_RowChanged);
+     table.RowChanging += new DataRowChangeEventHandler(Table_RowChanging);
+     table.RowChanged += new DataRowChangeEventHandler(Table_RowChanged);
  
-     table.RowDeleting += new DataRowChangeEventHandler(Table\_RowDeleting);
-     table.RowDeleted += new DataRowChangeEventHandler(Table\_RowDeleted);
+     table.RowDeleting += new DataRowChangeEventHandler(Table_RowDeleting);
+     table.RowDeleted += new DataRowChangeEventHandler(Table_RowDeleted);
  
-     table.TableNewRow += new DataTableNewRowEventHandler(Table\_NewRow);    
+     table.TableNewRow += new DataTableNewRowEventHandler(Table_NewRow);    
      
      
  
 
 And here is a possible event handler for the ColumnChanged event
 
-    void Table\_ColumnChanged(object sender, DataColumnChangeEventArgs args)
+    void Table_ColumnChanged(object sender, DataColumnChangeEventArgs args)
      {
          lboLog.Items.Add(string.Format("ColumnChanged ({0}): Value = {1}, ProposedValue = {2} ",
-                 args.Column.ColumnName, args.Row\[args.Column\], args.ProposedValue));
+                 args.Column.ColumnName, args.Row[args.Column], args.ProposedValue));
      }
  
  
@@ -623,7 +623,7 @@ The RowChanging, RowChanged, RowDeleting, and RowDeleted events use the DataRowC
      }   
      
  
-     \[Flags\]
+     [Flags]
      public enum DataRowAction
      {
          Nothing = 0,
@@ -667,7 +667,7 @@ The ColumnChanging and ColumnChanged events use the DataColumnChangeEventArgs.
 
 The DataRow class provides the RowState property of type DataRowState.
 
-    \[Flags\]
+    [Flags]
      public enum DataRowState
      {
          Detached = 1,
@@ -708,11 +708,11 @@ returns a new DataTable with just the rows of the calling table with the request
 
     DataTable temp = CreateTempTable();
  
-     /\* display the table \*/
+     /* display the table */
      temp.AcceptChanges();
      TableBox.Display(temp);
  
-     /\* display added rows \*/
+     /* display added rows */
      temp.Rows.Add(111);
  
      DataTable Added = temp.GetChanges(DataRowState.Added);
@@ -725,9 +725,9 @@ returns a new DataTable with just the rows of the calling table with the request
      temp.AcceptChanges();
  
  
-     /\* display modified rows \*/
-     temp.Rows\[0\]\["ID"\] = 123;
-     temp.Rows\[2\]\["ID"\] = 456;
+     /* display modified rows */
+     temp.Rows[0]["ID"] = 123;
+     temp.Rows[2]["ID"] = 456;
  
  
      DataTable Modified = temp.GetChanges(DataRowState.Modified);
@@ -740,9 +740,9 @@ returns a new DataTable with just the rows of the calling table with the request
      temp.AcceptChanges();
  
  
-     /\* display deleted rows \*/
-     temp.Rows\[2\].Delete();      // DataRow.Delete() marks the row for deletion
-     temp.Rows\[4\].Delete();
+     /* display deleted rows */
+     temp.Rows[2].Delete();      // DataRow.Delete() marks the row for deletion
+     temp.Rows[4].Delete();
      temp.Rows.RemoveAt(3);      // WARNING: DataTable.Rows.Remove() and RemoveAt() delete the row and call AcceptChanges()
  
  
@@ -764,21 +764,21 @@ The DataTable provides the Constraints property of type ConstraintCollection.
      {
          protected override ArrayList List { get; }
  
-         public Constraint this\[int index\] { get; }
-         public Constraint this\[string name\] { get; }
+         public Constraint this[int index] { get; }
+         public Constraint this[string name] { get; }
  
          public event CollectionChangeEventHandler CollectionChanged;
  
          public void Add(Constraint constraint);
          public Constraint Add(string name, DataColumn column, bool primaryKey);
          public Constraint Add(string name, DataColumn primaryKeyColumn, DataColumn foreignKeyColumn);
-         public Constraint Add(string name, DataColumn\[\] columns, bool primaryKey);
-         public Constraint Add(string name, DataColumn\[\] primaryKeyColumns, DataColumn\[\] foreignKeyColumns);
-         public void AddRange(Constraint\[\] constraints);
+         public Constraint Add(string name, DataColumn[] columns, bool primaryKey);
+         public Constraint Add(string name, DataColumn[] primaryKeyColumns, DataColumn[] foreignKeyColumns);
+         public void AddRange(Constraint[] constraints);
          public bool CanRemove(Constraint constraint);
          public void Clear();
          public bool Contains(string name);
-         public void CopyTo(Constraint\[\] array, int index);
+         public void CopyTo(Constraint[] array, int index);
          public int IndexOf(Constraint constraint);
          public int IndexOf(string constraintName);
          public void Remove(Constraint constraint);
@@ -794,7 +794,7 @@ The abstract Constraint class is the element item of the ConstraintCollection cl
      {
          protected Constraint();
  
-         protected virtual DataSet \_DataSet { get; }
+         protected virtual DataSet _DataSet { get; }
          public virtual string ConstraintName { get; set; }
          public PropertyCollection ExtendedProperties { get; }
          public abstract DataTable Table { get; }
@@ -815,16 +815,16 @@ A unique constraint is placed on a column or a group of columns and it requires 
     public class UniqueConstraint : Constraint
      {
          public UniqueConstraint(DataColumn column);
-         public UniqueConstraint(DataColumn\[\] columns);
+         public UniqueConstraint(DataColumn[] columns);
          public UniqueConstraint(DataColumn column, bool isPrimaryKey);
-         public UniqueConstraint(DataColumn\[\] columns, bool isPrimaryKey);
+         public UniqueConstraint(DataColumn[] columns, bool isPrimaryKey);
          public UniqueConstraint(string name, DataColumn column);
-         public UniqueConstraint(string name, DataColumn\[\] columns);
+         public UniqueConstraint(string name, DataColumn[] columns);
          public UniqueConstraint(string name, DataColumn column, bool isPrimaryKey);
-         public UniqueConstraint(string name, DataColumn\[\] columns, bool isPrimaryKey);
-         public UniqueConstraint(string name, string\[\] columnNames, bool isPrimaryKey);
+         public UniqueConstraint(string name, DataColumn[] columns, bool isPrimaryKey);
+         public UniqueConstraint(string name, string[] columnNames, bool isPrimaryKey);
  
-         public virtual DataColumn\[\] Columns { get; }
+         public virtual DataColumn[] Columns { get; }
          public bool IsPrimaryKey { get; }
          public override DataTable Table { get; }
  
@@ -842,8 +842,8 @@ A unique constraint is added to a DataTable either using the DataColumn.Unique b
 
 or using the DataTable.Constraints.Add() method.
 
-    /\* adding a unique constraint \*/
-     UniqueConstraint constraint = new UniqueConstraint("UC\_Code\_Material", column);
+    /* adding a unique constraint */
+     UniqueConstraint constraint = new UniqueConstraint("UC_Code_Material", column);
      table.Constraints.Add(constraint);
      
  
@@ -851,13 +851,13 @@ or using the DataTable.Constraints.Add() method.
 The overloaded versions of the DataTable.Constraints.Add() method
 
     public Constraint Add(string name, DataColumn column, bool primaryKey);
-     public Constraint Add(string name, DataColumn\[\] columns, bool primaryKey);
+     public Constraint Add(string name, DataColumn[] columns, bool primaryKey);
      
  
 
 are also used to define unique constraints on one or more DataColumns and optionally specify that column or columns as the primary key of the table.
 
-    table.Constraints.Add("PK\_Customers", table.Columns\["ID"\], true);
+    table.Constraints.Add("PK_Customers", table.Columns["ID"], true);
         
  
 
@@ -867,13 +867,13 @@ A primary key, just like a unique constraint, is defined on a single column or a
 
 A DataTable can have a primary key defined by using either the DataTable.PrimaryKey property
 
-    table.PrimaryKey = new DataColumn\[\] { table.Columns\["Code"\], table.Columns\["Name"\] };
+    table.PrimaryKey = new DataColumn[] { table.Columns["Code"], table.Columns["Name"] };
  
  
 
 or by using a UniqueConstraint object.
 
-    table.Constraints.Add("PK\_CUSTOMER", new DataColumn\[\] { table.Columns\["Code"\], table.Columns\["Name"\] }, true);
+    table.Constraints.Add("PK_CUSTOMER", new DataColumn[] { table.Columns["Code"], table.Columns["Name"] }, true);
      
  
 
@@ -911,7 +911,7 @@ which indicates whether a version exists at a given time.
 
 The indexer of the DataRow can optionally return a version of the row.
 
-    public object this\[string columnName, DataRowVersion version\] { get; }
+    public object this[string columnName, DataRowVersion version] { get; }
  
  
 
@@ -919,25 +919,25 @@ Here is an example
 
     if (table.Rows.Count > 0)
      {                
-         DataRow row = table.Rows\[0\];
+         DataRow row = table.Rows[0];
  
-         /\* commit any penging row changes  \*/
+         /* commit any penging row changes  */
          row.AcceptChanges();    
  
          row.BeginEdit();
-         row\["Code"\] = "99";
+         row["Code"] = "99";
  
          string S = "";
  
-         /\* display the original version of the column \*/
-         S = row\["Code", DataRowVersion.Original\].ToString();
+         /* display the original version of the column */
+         S = row["Code", DataRowVersion.Original].ToString();
          MessageBox.Show("Original: " + S);
  
-         /\* display the proposed version of the column \*/
-         S = row\["Code", DataRowVersion.Proposed\].ToString();
+         /* display the proposed version of the column */
+         S = row["Code", DataRowVersion.Proposed].ToString();
          MessageBox.Show("Proposed: " + S);
  
-         /\* cancel row changes \*/
+         /* cancel row changes */
          row.CancelEdit();                
      } 
  
@@ -948,20 +948,20 @@ Here is an example
 
 The DataTable.Rows.Find() method of the DataRowCollection class
 
-    public DataRow Find(object\[\] keys);
+    public DataRow Find(object[] keys);
      
  
 
 can locate a row based on a primary key. The Find() returns a null object in case of failure.
 
-    DataRow row = table.Rows.Find(new object\[\] { 5, "Name\_5" }); // Find() searches based on the PrimaryKey
+    DataRow row = table.Rows.Find(new object[] { 5, "Name_5" }); // Find() searches based on the PrimaryKey
      int i = table.Rows.IndexOf(row);
  
  
 
 The DataTable.Select() method
 
-    public DataRow\[\] Select(string filterExpression);
+    public DataRow[] Select(string filterExpression);
          
  
 
@@ -970,7 +970,7 @@ returns an array of DataRow objects based on a filter expression.
     string expression = "Date >= '{0}' and Date <= '{1}' ";
      expression = string.Format(expression, DateTime.Today.AddDays(5).ToShortDateString(), DateTime.Today.AddDays(7).ToShortDateString());
  
-     DataRow\[\] rows = table.Select(expression);      
+     DataRow[] rows = table.Select(expression);      
        
  
 
@@ -994,17 +994,17 @@ The expression parameter requires an aggregate function such as SUM or MIN. It c
  
      table.Columns.Add("Qty", typeof(double));
      table.Columns.Add("Price", typeof(double));
-     table.Columns.Add("LineValue", typeof(double), "Qty \* Price");
+     table.Columns.Add("LineValue", typeof(double), "Qty * Price");
  
-     table.Rows.Add(new object\[\] { 2, 5 } );
-     table.Rows.Add(new object\[\] { 3, 4 } );
-     table.Rows.Add(new object\[\] { 2, 2 } );
+     table.Rows.Add(new object[] { 2, 5 } );
+     table.Rows.Add(new object[] { 3, 4 } );
+     table.Rows.Add(new object[] { 2, 2 } );
      
  
 
 the next line results in an error
 
-    object Result = table.Compute("SUM(Qty \* Price)", "");    
+    object Result = table.Compute("SUM(Qty * Price)", "");    
  
  
 
@@ -1018,7 +1018,7 @@ while the following line executes fine.
 
 DataTable provides a great number of methods for saving/loading the table to a medium. Here is an example which saves a table to a xml disk file.
 
-    string FileName = Path.GetFullPath(@"..\\..\\Table.XML");
+    string FileName = Path.GetFullPath(@"..\..\Table.XML");
      table.WriteXml(FileName, XmlWriteMode.WriteSchema);
  
      DataTable temp = new DataTable();
@@ -1058,7 +1058,7 @@ The DataView class represents a view of a table data.
          public string Sort { get; set; }
          public DataTable Table { get; set; }
  
-         public DataRowView this\[int recordIndex\] { get; }
+         public DataRowView this[int recordIndex] { get; }
  
          public event EventHandler Initialized;
          public event ListChangedEventHandler ListChanged;
@@ -1070,14 +1070,14 @@ The DataView class represents a view of a table data.
          public void EndInit();
          public virtual bool Equals(DataView view);
          public int Find(object key);
-         public int Find(object\[\] key);
-         public DataRowView\[\] FindRows(object key);
-         public DataRowView\[\] FindRows(object\[\] key);
+         public int Find(object[] key);
+         public DataRowView[] FindRows(object key);
+         public DataRowView[] FindRows(object[] key);
          public IEnumerator GetEnumerator();
          public DataTable ToTable();
          public DataTable ToTable(string tableName);
-         public DataTable ToTable(bool distinct, params string\[\] columnNames);
-         public DataTable ToTable(string tableName, bool distinct, params string\[\] columnNames);
+         public DataTable ToTable(bool distinct, params string[] columnNames);
+         public DataTable ToTable(string tableName, bool distinct, params string[] columnNames);
      }
  
  
@@ -1100,21 +1100,21 @@ A DataView can sort and filter the data it represents. Also a DataView can serve
              table.Columns.Add("ID", typeof(int));
              table.Columns.Add("Name", typeof(string));
  
-             table.Rows.Add(new object\[\] {1, "Paris" });
-             table.Rows.Add(new object\[\] {2, "London" });
-             table.Rows.Add(new object\[\] {3, "Athens" });
-             table.Rows.Add(new object\[\] {4, "Berlin" });
-             table.Rows.Add(new object\[\] {5, "Rome" });
+             table.Rows.Add(new object[] {1, "Paris" });
+             table.Rows.Add(new object[] {2, "London" });
+             table.Rows.Add(new object[] {3, "Athens" });
+             table.Rows.Add(new object[] {4, "Berlin" });
+             table.Rows.Add(new object[] {5, "Rome" });
  
              Grid.DataSource = table.DefaultView;            
          }
  
-         private void btnSort\_Click(object sender, EventArgs e)
+         private void btnSort_Click(object sender, EventArgs e)
          {
              table.DefaultView.Sort = edtSort.Text;
          }
  
-         private void btnRowFilter\_Click(object sender, EventArgs e)
+         private void btnRowFilter_Click(object sender, EventArgs e)
          {
              table.DefaultView.RowFilter = edtRowFilter.Text;
          } 
@@ -1158,7 +1158,7 @@ The DataSet class represents a set of DataTable objects. The DataSet class is a 
          public virtual DataSet Clone();
          public DataSet Copy();
          public DataTableReader CreateDataReader();
-         public DataTableReader CreateDataReader(params DataTable\[\] dataTables);
+         public DataTableReader CreateDataReader(params DataTable[] dataTables);
          public void EndInit();
          public DataSet GetChanges();
          public DataSet GetChanges(DataRowState rowStates);
@@ -1168,18 +1168,18 @@ The DataSet class represents a set of DataTable objects. The DataSet class is a 
          public string GetXmlSchema();
          public bool HasChanges();
          public bool HasChanges(DataRowState rowStates);
-         public void InferXmlSchema(Stream stream, string\[\] nsArray);
-         public void InferXmlSchema(string fileName, string\[\] nsArray);
-         public void InferXmlSchema(TextReader reader, string\[\] nsArray);
-         public void InferXmlSchema(XmlReader reader, string\[\] nsArray);
-         public void Load(IDataReader reader, LoadOption loadOption, params DataTable\[\] tables);
-         public void Load(IDataReader reader, LoadOption loadOption, params string\[\] tables);
-         public virtual void Load(IDataReader reader, LoadOption loadOption, FillErrorEventHandler errorHandler, params DataTable\[\] tables);
-         public void Merge(DataRow\[\] rows);
+         public void InferXmlSchema(Stream stream, string[] nsArray);
+         public void InferXmlSchema(string fileName, string[] nsArray);
+         public void InferXmlSchema(TextReader reader, string[] nsArray);
+         public void InferXmlSchema(XmlReader reader, string[] nsArray);
+         public void Load(IDataReader reader, LoadOption loadOption, params DataTable[] tables);
+         public void Load(IDataReader reader, LoadOption loadOption, params string[] tables);
+         public virtual void Load(IDataReader reader, LoadOption loadOption, FillErrorEventHandler errorHandler, params DataTable[] tables);
+         public void Merge(DataRow[] rows);
          public void Merge(DataSet dataSet);
          public void Merge(DataTable table);
          public void Merge(DataSet dataSet, bool preserveChanges);
-         public void Merge(DataRow\[\] rows, bool preserveChanges, MissingSchemaAction missingSchemaAction);
+         public void Merge(DataRow[] rows, bool preserveChanges, MissingSchemaAction missingSchemaAction);
          public void Merge(DataSet dataSet, bool preserveChanges, MissingSchemaAction missingSchemaAction);
          public void Merge(DataTable table, bool preserveChanges, MissingSchemaAction missingSchemaAction);
          public XmlReadMode ReadXml(Stream stream);
@@ -1241,16 +1241,16 @@ The ForeignKeyConstraint class represents a foreign key constraint.
     public class ForeignKeyConstraint : Constraint
      {
          public ForeignKeyConstraint(DataColumn parentColumn, DataColumn childColumn);
-         public ForeignKeyConstraint(DataColumn\[\] parentColumns, DataColumn\[\] childColumns);
+         public ForeignKeyConstraint(DataColumn[] parentColumns, DataColumn[] childColumns);
          public ForeignKeyConstraint(string constraintName, DataColumn parentColumn, DataColumn childColumn);
-         public ForeignKeyConstraint(string constraintName, DataColumn\[\] parentColumns, DataColumn\[\] childColumns);
-         public ForeignKeyConstraint(string constraintName, string parentTableName, string\[\] parentColumnNames, string\[\] childColumnNames, AcceptRejectRule acceptRejectRule, Rule deleteRule, Rule updateRule);
-         public ForeignKeyConstraint(string constraintName, string parentTableName, string parentTableNamespace, string\[\] parentColumnNames, string\[\] childColumnNames, AcceptRejectRule acceptRejectRule, Rule deleteRule, Rule updateRule);
+         public ForeignKeyConstraint(string constraintName, DataColumn[] parentColumns, DataColumn[] childColumns);
+         public ForeignKeyConstraint(string constraintName, string parentTableName, string[] parentColumnNames, string[] childColumnNames, AcceptRejectRule acceptRejectRule, Rule deleteRule, Rule updateRule);
+         public ForeignKeyConstraint(string constraintName, string parentTableName, string parentTableNamespace, string[] parentColumnNames, string[] childColumnNames, AcceptRejectRule acceptRejectRule, Rule deleteRule, Rule updateRule);
  
          public virtual AcceptRejectRule AcceptRejectRule { get; set; }
-         public virtual DataColumn\[\] Columns { get; }
+         public virtual DataColumn[] Columns { get; }
          public virtual Rule DeleteRule { get; set; }
-         public virtual DataColumn\[\] RelatedColumns { get; }
+         public virtual DataColumn[] RelatedColumns { get; }
          public virtual DataTable RelatedTable { get; }
          public override DataTable Table { get; }
          public virtual Rule UpdateRule { get; set; }
@@ -1263,7 +1263,7 @@ The ForeignKeyConstraint class represents a foreign key constraint.
 
 A foreign key constraint can be added to a table by using either the ForeignKeyConstraint class
 
-    ForeignKeyConstraint fkcOrders = new ForeignKeyConstraint("FK\_ORDERS", tblOrders.Columns\["ID"\], tblLines.Columns\["OrderID"\]);
+    ForeignKeyConstraint fkcOrders = new ForeignKeyConstraint("FK_ORDERS", tblOrders.Columns["ID"], tblLines.Columns["OrderID"]);
      tblLines.Constraints.Add(fkcOrders);
  
  
@@ -1271,13 +1271,13 @@ A foreign key constraint can be added to a table by using either the ForeignKeyC
 or one of the following overloaded versions of the DataTable.Constraints.Add() method
 
     public Constraint Add(string name, DataColumn primaryKeyColumn, DataColumn foreignKeyColumn);
-     public Constraint Add(string name, DataColumn\[\] primaryKeyColumns, DataColumn\[\] foreignKeyColumns);
+     public Constraint Add(string name, DataColumn[] primaryKeyColumns, DataColumn[] foreignKeyColumns);
  
  
 
 Here is an example
 
-    tblLines.Constraints.Add("FK\_ORDERS", tblOrders.Columns\["ID"\], tblLines.Columns\["OrderID"\]);
+    tblLines.Constraints.Add("FK_ORDERS", tblOrders.Columns["ID"], tblLines.Columns["OrderID"]);
      
  
 
@@ -1309,7 +1309,7 @@ The AcceptRejectRule is of the AcceptRejectRule enum type.
 
 Here is an example.
 
-    ForeignKeyConstraint fkcOrders = new ForeignKeyConstraint("FK\_ORDERS", tblOrders.Columns\["ID"\], tblLines.Columns\["OrderID"\]);
+    ForeignKeyConstraint fkcOrders = new ForeignKeyConstraint("FK_ORDERS", tblOrders.Columns["ID"], tblLines.Columns["OrderID"]);
      fkcOrders.DeleteRule = Rule.SetNull;
      fkcOrders.UpdateRule = Rule.Cascade;
      fkcOrders.AcceptRejectRule = AcceptRejectRule.Cascade;
@@ -1324,19 +1324,19 @@ A DataRelation object represents a master-detail relationship between two DataTa
     public class DataRelation
      {
          public DataRelation(string relationName, DataColumn parentColumn, DataColumn childColumn);
-         public DataRelation(string relationName, DataColumn\[\] parentColumns, DataColumn\[\] childColumns);
+         public DataRelation(string relationName, DataColumn[] parentColumns, DataColumn[] childColumns);
          public DataRelation(string relationName, DataColumn parentColumn, DataColumn childColumn, bool createConstraints);
-         public DataRelation(string relationName, DataColumn\[\] parentColumns, DataColumn\[\] childColumns, bool createConstraints);
-         public DataRelation(string relationName, string parentTableName, string childTableName, string\[\] parentColumnNames, string\[\] childColumnNames, bool nested);
-         public DataRelation(string relationName, string parentTableName, string parentTableNamespace, string childTableName, string childTableNamespace, string\[\] parentColumnNames, string\[\] childColumnNames, bool nested);
+         public DataRelation(string relationName, DataColumn[] parentColumns, DataColumn[] childColumns, bool createConstraints);
+         public DataRelation(string relationName, string parentTableName, string childTableName, string[] parentColumnNames, string[] childColumnNames, bool nested);
+         public DataRelation(string relationName, string parentTableName, string parentTableNamespace, string childTableName, string childTableNamespace, string[] parentColumnNames, string[] childColumnNames, bool nested);
  
-         public virtual DataColumn\[\] ChildColumns { get; }
+         public virtual DataColumn[] ChildColumns { get; }
          public virtual ForeignKeyConstraint ChildKeyConstraint { get; }
          public virtual DataTable ChildTable { get; }
          public virtual DataSet DataSet { get; }
          public PropertyCollection ExtendedProperties { get; }
          public virtual bool Nested { get; set; }
-         public virtual DataColumn\[\] ParentColumns { get; }
+         public virtual DataColumn[] ParentColumns { get; }
          public virtual UniqueConstraint ParentKeyConstraint { get; }
          public virtual DataTable ParentTable { get; }
          public virtual string RelationName { get; set; }
@@ -1350,23 +1350,23 @@ DataRelation objects are kept in DataRelationCollection collection objects.
 
     public abstract class DataRelationCollection : InternalDataCollectionBase
      {
-         public abstract DataRelation this\[int index\] { get; }
-         public abstract DataRelation this\[string name\] { get; }
+         public abstract DataRelation this[int index] { get; }
+         public abstract DataRelation this[string name] { get; }
  
          public event CollectionChangeEventHandler CollectionChanged;
  
          public void Add(DataRelation relation);
          public virtual DataRelation Add(DataColumn parentColumn, DataColumn childColumn);
-         public virtual DataRelation Add(DataColumn\[\] parentColumns, DataColumn\[\] childColumns);
+         public virtual DataRelation Add(DataColumn[] parentColumns, DataColumn[] childColumns);
          public virtual DataRelation Add(string name, DataColumn parentColumn, DataColumn childColumn);
-         public virtual DataRelation Add(string name, DataColumn\[\] parentColumns, DataColumn\[\] childColumns);
+         public virtual DataRelation Add(string name, DataColumn[] parentColumns, DataColumn[] childColumns);
          public virtual DataRelation Add(string name, DataColumn parentColumn, DataColumn childColumn, bool createConstraints);
-         public virtual DataRelation Add(string name, DataColumn\[\] parentColumns, DataColumn\[\] childColumns, bool createConstraints);
-         public virtual void AddRange(DataRelation\[\] relations);
+         public virtual DataRelation Add(string name, DataColumn[] parentColumns, DataColumn[] childColumns, bool createConstraints);
+         public virtual void AddRange(DataRelation[] relations);
          public virtual bool CanRemove(DataRelation relation);
          public virtual void Clear();
          public virtual bool Contains(string name);
-         public void CopyTo(DataRelation\[\] array, int index);
+         public void CopyTo(DataRelation[] array, int index);
          public virtual int IndexOf(DataRelation relation);
          public virtual int IndexOf(string relationName);
          public void Remove(DataRelation relation);
@@ -1392,25 +1392,25 @@ and the DataTable provides the ChildRelations and ParentRelations properties.
 
 DataRelation objects are only valid between DataTable objects which belong to the same DataSet. A DataRelation is created between matching columns in the master and detail tables. The value of the DataType property for both columns must be identical.
 
-    DataRelation relation = new DataRelation("OrderLines", tblOrders.Columns\["ID"\], tblLines.Columns\["OrderID"\]);
+    DataRelation relation = new DataRelation("OrderLines", tblOrders.Columns["ID"], tblLines.Columns["OrderID"]);
      ds.Relations.Add(relation);    
  
  
 
 or
 
-    tblOrders.ChildRelations.Add("OrderLines", tblOrders.Columns\["ID"\], tblLines.Columns\["OrderID"\]);
+    tblOrders.ChildRelations.Add("OrderLines", tblOrders.Columns["ID"], tblLines.Columns["OrderID"]);
      
  
 
 And here is an example of how to setup two DataGridView controls in a master-detail relationship.
 
-    /\* pass the ds DataSet as the DataSource to both DataGridView objects, instead of DataTables \*/
+    /* pass the ds DataSet as the DataSource to both DataGridView objects, instead of DataTables */
      gridMaster.DataSource = ds;
      gridDetail.DataSource = ds;
  
-     /\* set the DataMember properly, in order to have 
-        automatic generation of the OrderID value for the detail table \*/
+     /* set the DataMember properly, in order to have 
+        automatic generation of the OrderID value for the detail table */
      gridMaster.DataMember = "Orders";
      gridDetail.DataMember = "Orders.OrderLines";  // OrderLines refers to the DataRelation here
      
@@ -1422,14 +1422,14 @@ The DataRow class provides the GetChildRows(), GetParentRow() and GetParentRows(
     public class DataRow
      {
       ...
-         public DataRow\[\] GetChildRows(DataRelation relation);
-         public DataRow\[\] GetChildRows(string relationName);   
+         public DataRow[] GetChildRows(DataRelation relation);
+         public DataRow[] GetChildRows(string relationName);   
       ... 
          public DataRow GetParentRow(DataRelation relation);
          public DataRow GetParentRow(string relationName);
       ... 
-         public DataRow\[\] GetParentRows(DataRelation relation);
-         public DataRow\[\] GetParentRows(string relationName);    
+         public DataRow[] GetParentRows(DataRelation relation);
+         public DataRow[] GetParentRows(string relationName);    
       ...     
      }      
      
@@ -1452,7 +1452,7 @@ The examples in this section use a MS Access database with the following schema 
      create table CITY
      (
         ID           integer identity not null primary key,
-        COUNTRY\_ID   integer constraint FK\_CITY\_0 references COUNTRY(ID),
+        COUNTRY_ID   integer constraint FK_CITY_0 references COUNTRY(ID),
         NAME         varchar(32)
      );    
      
@@ -1460,7 +1460,7 @@ The examples in this section use a MS Access database with the following schema 
      (
         ID           integer identity not null primary key,
         NAME         varchar(32),
-        COUNTRY\_ID   integer constraint FK\_TRADER\_0 references COUNTRY(ID) 
+        COUNTRY_ID   integer constraint FK_TRADER_0 references COUNTRY(ID) 
      );    
      
      create table MATERIAL
@@ -1474,21 +1474,21 @@ The examples in this section use a MS Access database with the following schema 
      create table TRADE
      (
          ID          integer identity not null primary key,
-         TRADER\_ID   integer constraint FK\_TRADE\_0 references TRADER(ID),
-         TRADE\_TYPE  integer,
-         TRADE\_DATE  date,
-         TOTAL\_VALUE float
+         TRADER_ID   integer constraint FK_TRADE_0 references TRADER(ID),
+         TRADE_TYPE  integer,
+         TRADE_DATE  date,
+         TOTAL_VALUE float
      );
      
-     create table TRADE\_LINES
+     create table TRADE_LINES
      (
          ID          integer identity not null primary key,
-         TRADE\_ID    integer constraint FK\_TRADE\_LINES\_0 references TRADE(ID),
-         MATERIAL\_ID integer constraint FK\_TRADE\_LINES\_1 references MATERIAL(ID),
+         TRADE_ID    integer constraint FK_TRADE_LINES_0 references TRADE(ID),
+         MATERIAL_ID integer constraint FK_TRADE_LINES_1 references MATERIAL(ID),
          QTY         float,
          PRICE       float,
          VAT         float,
-         LINE\_VALUE  float
+         LINE_VALUE  float
      );
      
      create table PICTURES
@@ -1504,24 +1504,24 @@ The examples in this section use a MS Access database with the following schema 
      insert into COUNTRY (CODE, NAME) values ('DK', 'Denmark');
      insert into COUNTRY (CODE, NAME) values ('UK', 'United Kingdom');
      
-     insert into CITY (COUNTRY\_ID, NAME) values (1, 'Madrid');
-     insert into CITY (COUNTRY\_ID, NAME) values (1, 'Barcelona');
-     insert into CITY (COUNTRY\_ID, NAME) values (1, 'Valencia');
-     insert into CITY (COUNTRY\_ID, NAME) values (2, 'Prague');
-     insert into CITY (COUNTRY\_ID, NAME) values (2, 'Brno');
-     insert into CITY (COUNTRY\_ID, NAME) values (3, 'Athens');
-     insert into CITY (COUNTRY\_ID, NAME) values (3, 'Thessaloniki');
-     insert into CITY (COUNTRY\_ID, NAME) values (4, 'Copenhagen');
-     insert into CITY (COUNTRY\_ID, NAME) values (4, 'Aarhus');
-     insert into CITY (COUNTRY\_ID, NAME) values (5, 'London');
-     insert into CITY (COUNTRY\_ID, NAME) values (5, 'Edinburgh');    
+     insert into CITY (COUNTRY_ID, NAME) values (1, 'Madrid');
+     insert into CITY (COUNTRY_ID, NAME) values (1, 'Barcelona');
+     insert into CITY (COUNTRY_ID, NAME) values (1, 'Valencia');
+     insert into CITY (COUNTRY_ID, NAME) values (2, 'Prague');
+     insert into CITY (COUNTRY_ID, NAME) values (2, 'Brno');
+     insert into CITY (COUNTRY_ID, NAME) values (3, 'Athens');
+     insert into CITY (COUNTRY_ID, NAME) values (3, 'Thessaloniki');
+     insert into CITY (COUNTRY_ID, NAME) values (4, 'Copenhagen');
+     insert into CITY (COUNTRY_ID, NAME) values (4, 'Aarhus');
+     insert into CITY (COUNTRY_ID, NAME) values (5, 'London');
+     insert into CITY (COUNTRY_ID, NAME) values (5, 'Edinburgh');    
      
-     insert into TRADER (NAME, COUNTRY\_ID) values ('Cheap Software Ltd'    , '3'); 
-     insert into TRADER (NAME, COUNTRY\_ID) values ('Fast Internet Co'      , '4'); 
-     insert into TRADER (NAME, COUNTRY\_ID) values ('Neat Hardware'         , '1'); 
-     insert into TRADER (NAME, COUNTRY\_ID) values ('Cool Tech'             , '4'); 
-     insert into TRADER (NAME, COUNTRY\_ID) values ('Steady Logic'          , '2'); 
-     insert into TRADER (NAME, COUNTRY\_ID) values ('Nasty Data'            , '3');     
+     insert into TRADER (NAME, COUNTRY_ID) values ('Cheap Software Ltd'    , '3'); 
+     insert into TRADER (NAME, COUNTRY_ID) values ('Fast Internet Co'      , '4'); 
+     insert into TRADER (NAME, COUNTRY_ID) values ('Neat Hardware'         , '1'); 
+     insert into TRADER (NAME, COUNTRY_ID) values ('Cool Tech'             , '4'); 
+     insert into TRADER (NAME, COUNTRY_ID) values ('Steady Logic'          , '2'); 
+     insert into TRADER (NAME, COUNTRY_ID) values ('Nasty Data'            , '3');     
      
      insert into MATERIAL (NAME, PRICE, VAT) values ('Hard disk'     ,  50 , 0.19); 
      insert into MATERIAL (NAME, PRICE, VAT) values ('Mouse'         ,   5 , 0.19); 
@@ -1530,22 +1530,22 @@ The examples in this section use a MS Access database with the following schema 
      insert into MATERIAL (NAME, PRICE, VAT) values ('Scanner'       ,  65 , 0.19); 
      insert into MATERIAL (NAME, PRICE, VAT) values ('Monitor'       , 120 , 0.19); 
      
-     insert into TRADE (TRADER\_ID, TRADE\_TYPE, TRADE\_DATE, TOTAL\_VALUE) values (4, 1, '2004-07-12', 0);    
-     insert into TRADE (TRADER\_ID, TRADE\_TYPE, TRADE\_DATE, TOTAL\_VALUE) values (6, 1, '2004-07-13', 0);  
-     insert into TRADE (TRADER\_ID, TRADE\_TYPE, TRADE\_DATE, TOTAL\_VALUE) values (3, 1, '2004-07-13', 0);  
+     insert into TRADE (TRADER_ID, TRADE_TYPE, TRADE_DATE, TOTAL_VALUE) values (4, 1, '2004-07-12', 0);    
+     insert into TRADE (TRADER_ID, TRADE_TYPE, TRADE_DATE, TOTAL_VALUE) values (6, 1, '2004-07-13', 0);  
+     insert into TRADE (TRADER_ID, TRADE_TYPE, TRADE_DATE, TOTAL_VALUE) values (3, 1, '2004-07-13', 0);  
      
-     insert into TRADE\_LINES (TRADE\_ID, MATERIAL\_ID, QTY, PRICE, VAT, LINE\_VALUE) values (1, 2, 1,  5, 0.19, (1 \* 5 ) + (1 \*  5 \* 0.19));
-     insert into TRADE\_LINES (TRADE\_ID, MATERIAL\_ID, QTY, PRICE, VAT, LINE\_VALUE) values (1, 3, 1, 12, 0.19, (1 \* 12) + (1 \* 12 \* 0.19));
+     insert into TRADE_LINES (TRADE_ID, MATERIAL_ID, QTY, PRICE, VAT, LINE_VALUE) values (1, 2, 1,  5, 0.19, (1 * 5 ) + (1 *  5 * 0.19));
+     insert into TRADE_LINES (TRADE_ID, MATERIAL_ID, QTY, PRICE, VAT, LINE_VALUE) values (1, 3, 1, 12, 0.19, (1 * 12) + (1 * 12 * 0.19));
      
-     insert into TRADE\_LINES (TRADE\_ID, MATERIAL\_ID, QTY, PRICE, VAT, LINE\_VALUE) values (2, 4, 2, 17, 0.19, (2 \* 17) + (2 \* 17 \* 0.19));
-     insert into TRADE\_LINES (TRADE\_ID, MATERIAL\_ID, QTY, PRICE, VAT, LINE\_VALUE) values (2, 5, 1, 65, 0.19, (1 \* 65) + (1 \* 65 \* 0.19));
-     insert into TRADE\_LINES (TRADE\_ID, MATERIAL\_ID, QTY, PRICE, VAT, LINE\_VALUE) values (2, 2, 2,  5, 0.19, (2 \* 5 ) + (2 \*  5 \* 0.19));
+     insert into TRADE_LINES (TRADE_ID, MATERIAL_ID, QTY, PRICE, VAT, LINE_VALUE) values (2, 4, 2, 17, 0.19, (2 * 17) + (2 * 17 * 0.19));
+     insert into TRADE_LINES (TRADE_ID, MATERIAL_ID, QTY, PRICE, VAT, LINE_VALUE) values (2, 5, 1, 65, 0.19, (1 * 65) + (1 * 65 * 0.19));
+     insert into TRADE_LINES (TRADE_ID, MATERIAL_ID, QTY, PRICE, VAT, LINE_VALUE) values (2, 2, 2,  5, 0.19, (2 * 5 ) + (2 *  5 * 0.19));
      
-     insert into TRADE\_LINES (TRADE\_ID, MATERIAL\_ID, QTY, PRICE, VAT, LINE\_VALUE) values (3, 6, 1, 120, 0.19, (1 \* 120) + (1 \* 120 \* 0.19));
+     insert into TRADE_LINES (TRADE_ID, MATERIAL_ID, QTY, PRICE, VAT, LINE_VALUE) values (3, 6, 1, 120, 0.19, (1 * 120) + (1 * 120 * 0.19));
      
-     update TRADE set TOTAL\_VALUE =  20.23 where ID = 1;
-     update TRADE set TOTAL\_VALUE = 129.71 where ID = 2;
-     update TRADE set TOTAL\_VALUE = 142.80 where ID = 3;
+     update TRADE set TOTAL_VALUE =  20.23 where ID = 1;
+     update TRADE set TOTAL_VALUE = 129.71 where ID = 2;
+     update TRADE set TOTAL_VALUE = 142.80 where ID = 3;
      
  
  
@@ -1609,7 +1609,7 @@ see also:
 *   [http://sourceforge.net/projects/sqlite-dotnet2](   http://sourceforge.net/projects/sqlite-dotnet2)
 *   [http://uda.openlinksw.com/dotnet/mt/dotnet-mysql-mt/](http://uda.openlinksw.com/dotnet/mt/dotnet-mysql-mt/)
 *   [http://www.devart.com/dotconnect/postgresql/](http://www.devart.com/dotconnect/postgresql/)
-*   [http://www.ibphoenix.com/main.nfs?page=ibp\_download\_dotnet](http://www.ibphoenix.com/main.nfs?page=ibp_download_dotnet)
+*   [http://www.ibphoenix.com/main.nfs?page=ibp_download_dotnet](http://www.ibphoenix.com/main.nfs?page=ibp_download_dotnet)
 
 #### Data types
 
@@ -1721,7 +1721,7 @@ Starting from .Net 2.0 the System.Data.Common namespace provides the DbProviderF
 
 The machine.config file found at
 
-    C:\\<windows>\\Microsoft.NET\\Framework\\<version>\\config\\machine.config 
+    C:\<windows>\Microsoft.NET\Framework\<version>\config\machine.config 
  
 
 is a .Net config file containing machine-wide settings. A data provider which exposes factory functionality, registers itself to this file. Here is a fragment taken from that file.
@@ -1781,7 +1781,7 @@ The most common keywords used by an OleDb connection string are
 *   User ID
 *   Password or Pwd
 
-It is easy to create a connection string for the System.Data.OleDb provider. Just create a new empty text file somewhere and rename its extension to .udl, which stands for Universal Data Link. For example, c:\\Temp\\ConnectionString.udl.
+It is easy to create a connection string for the System.Data.OleDb provider. Just create a new empty text file somewhere and rename its extension to .udl, which stands for Universal Data Link. For example, c:\Temp\ConnectionString.udl.
 
 Double clicking on the .udl file displays the Data Link Properties system dialog box which is then used to construct the connection string. The constructed connection string is automatically saved to the .udl file, which is just a plain .ini file. It can be opened with the Notepad or any other text editor.
 
@@ -1793,9 +1793,9 @@ Here are some sample connection strings for the System.Data.OleDb provider.
 
     Provider=SQLOLEDB.1; Data Source=MyComputerName; Initial Catalog=myMsSqlDatabase; Integrated Security=SSPI; Persist Security Info=False;
      Provider=MSDAORA; Data Source=InstanceOfOracleServerToConnect; User Id=admin; Password=<password>;    
-     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\\My App\\MyDB.MDB"; User Id=admin; Password=;
-     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\\My App\\Data.XLS"; Extended Properties=Excel 8.0;    
-     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\\My App\\"; Extended Properties="text; HDR=Yes; FMT=Delimited(,)";
+     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\My App\MyDB.MDB"; User Id=admin; Password=;
+     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\My App\Data.XLS"; Extended Properties=Excel 8.0;    
+     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\My App\"; Extended Properties="text; HDR=Yes; FMT=Delimited(,)";
  
  
 
@@ -1808,7 +1808,7 @@ Here are some connection string examples for various datasources.
 System.Data.SqlClient (MS SQL server).
 
     Data Source=localhost; Initial Catalog=MyDB; Integrated Security=SSPI;
-     Data Source=.\\SQLEXPRESS; Initial Catalog=MyDB; AttachDbFilename="C:\\My App\\MyDB.mdf"; Integrated Security=SSPI;  
+     Data Source=.\SQLEXPRESS; Initial Catalog=MyDB; AttachDbFilename="C:\My App\MyDB.mdf"; Integrated Security=SSPI;  
  
  
 
@@ -1820,13 +1820,13 @@ System.Data.OracleClient (Oracle server).
 
 FirebirdSql.Data.FirebirdClient (Firebird SQL server)
 
-    User=SYSDBA; Password=masterkey; DataSource=localhost; Database="C:\\My App\\Data.FDB";
+    User=SYSDBA; Password=masterkey; DataSource=localhost; Database="C:\My App\Data.FDB";
      
  
 
 System.Data.Odbc (ODBC connections)
 
-    Driver={SQL Server}; Server=(local); Database=MyDB; Trusted\_Connection=Yes; 
+    Driver={SQL Server}; Server=(local); Database=MyDB; Trusted_Connection=Yes; 
      DSN=OdbcDsnName; 
  
  
@@ -1856,7 +1856,7 @@ To help with building connection strings each provider provides a specific conne
          public virtual ICollection Keys { get; }
          public virtual ICollection Values { get; }
  
-         public virtual object this\[string keyword\] { get; set; }
+         public virtual object this[string keyword] { get; set; }
  
          public void Add(string keyword, object value);
          public static void AppendKeyValuePair(StringBuilder builder, string keyword, string value);
@@ -1883,9 +1883,9 @@ As always it is easier to work with a neutral connection string builder.
 
     DbConnectionStringBuilder csBuilder = factory.CreateConnectionStringBuilder(); 
   
-     csBuilder\["Data Source"\] = "localhost";
-     csBuilder\["Initial Catalog"\] = "MyDB";
-     csBuilder\["Integrated Security"\] = true;
+     csBuilder["Data Source"] = "localhost";
+     csBuilder["Initial Catalog"] = "MyDB";
+     csBuilder["Integrated Security"] = true;
      
      string cs = csBuilder.ConnectionString;
  
@@ -1915,7 +1915,7 @@ Application configuration files, such as app.config and web.config, may contain 
 
 The System.Configuration namespace (in System.Configuration.dll assembly) contains classes capable of handling that information.
 
-    ConnectionStringSettings csSettings = ConfigurationManager.ConnectionStrings\["MyDB"\];
+    ConnectionStringSettings csSettings = ConfigurationManager.ConnectionStrings["MyDB"];
      string cs = csSettings.ConnectionString;
      
  
@@ -1943,7 +1943,7 @@ The DbConnection class represents a connection to a database.
          public virtual void EnlistTransaction(System.Transactions.Transaction transaction);
          public virtual DataTable GetSchema();
          public virtual DataTable GetSchema(string collectionName);
-         public virtual DataTable GetSchema(string collectionName, string\[\] restrictionValues);
+         public virtual DataTable GetSchema(string collectionName, string[] restrictionValues);
          public abstract void Open();
      }
  
@@ -1958,7 +1958,7 @@ WARNING: The Close() method rolls back any pending transactions.
 
 Here is a snippet that uses the using keyword to close and dispose the connection.
 
-    string FileName = Path.GetFullPath(@"..\\..\\..\\Lessons.MDB");
+    string FileName = Path.GetFullPath(@"..\..\..\Lessons.MDB");
      string cs = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=""{0}""; User Id=admin; Password=;", FileName);
      
      DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.OleDb");
@@ -2047,7 +2047,7 @@ The Parameters property, of type DbParameterCollection, is used by parameterized
          con.Open();
  
          DbCommand cmd = con.CreateCommand();
-         cmd.CommandText = "select \* from COUNTRY";
+         cmd.CommandText = "select /* from COUNTRY";
  
          ...              
      }
@@ -2057,8 +2057,8 @@ The Parameters property, of type DbParameterCollection, is used by parameterized
 
 see also:
 
-*   [http://en.wikipedia.org/wiki/Data\_Definition\_Language](   http://en.wikipedia.org/wiki/Data_Definition_Language)
-*   [http://en.wikipedia.org/wiki/Data\_Manipulation\_Language](http://en.wikipedia.org/wiki/Data_Manipulation_Language)
+*   [http://en.wikipedia.org/wiki/Data_Definition_Language](   http://en.wikipedia.org/wiki/Data_Definition_Language)
+*   [http://en.wikipedia.org/wiki/Data_Manipulation_Language](http://en.wikipedia.org/wiki/Data_Manipulation_Language)
 
 #### Retrieving data: DbCommand.ExecuteScalar()
 
@@ -2082,16 +2082,16 @@ The DbCommand.ExecuteReader() overloaded method executes the CommandText and ret
          public abstract int RecordsAffected { get; }
          public virtual int VisibleFieldCount { get; }
  
-         public abstract object this\[int ordinal\] { get; }
-         public abstract object this\[string name\] { get; }
+         public abstract object this[int ordinal] { get; }
+         public abstract object this[string name] { get; }
  
          public abstract void Close();
          public void Dispose();
          public abstract bool GetBoolean(int ordinal);
          public abstract byte GetByte(int ordinal);
-         public abstract long GetBytes(int ordinal, long dataOffset, byte\[\] buffer, int bufferOffset, int length);
+         public abstract long GetBytes(int ordinal, long dataOffset, byte[] buffer, int bufferOffset, int length);
          public abstract char GetChar(int ordinal);
-         public abstract long GetChars(int ordinal, long dataOffset, char\[\] buffer, int bufferOffset, int length);
+         public abstract long GetChars(int ordinal, long dataOffset, char[] buffer, int bufferOffset, int length);
          public DbDataReader GetData(int ordinal);
          public abstract string GetDataTypeName(int ordinal);
          public abstract DateTime GetDateTime(int ordinal);
@@ -2108,11 +2108,11 @@ The DbCommand.ExecuteReader() overloaded method executes the CommandText and ret
          public abstract int GetOrdinal(string name);
          public virtual Type GetProviderSpecificFieldType(int ordinal);
          public virtual object GetProviderSpecificValue(int ordinal);
-         public virtual int GetProviderSpecificValues(object\[\] values);
+         public virtual int GetProviderSpecificValues(object[] values);
          public abstract DataTable GetSchemaTable();
          public abstract string GetString(int ordinal);
          public abstract object GetValue(int ordinal);
-         public abstract int GetValues(object\[\] values);
+         public abstract int GetValues(object[] values);
          public abstract bool IsDBNull(int ordinal);
          public abstract bool NextResult();
          public abstract bool Read();
@@ -2139,7 +2139,7 @@ Here is some example code which uses a DbDataReader.
      
      ...    
      
-     cmd.CommandText = "select \* from COUNTRY";
+     cmd.CommandText = "select * from COUNTRY";
  
      using (DbDataReader reader = cmd.ExecuteReader())
      {
@@ -2147,7 +2147,7 @@ Here is some example code which uses a DbDataReader.
  
          while (reader.Read())
          {
-             list.Add(new Country((int)reader\["ID"\], (string)reader\["Code"\], (string)reader\["Name"\]));
+             list.Add(new Country((int)reader["ID"], (string)reader["Code"], (string)reader["Name"]));
          }
  
          Grid.DataSource = list;
@@ -2173,8 +2173,8 @@ The DbDataAdapter class is used in order to place a result set into a DataTable 
          public event FillErrorEventHandler FillError;
  
          public virtual int Fill(DataSet dataSet);
-         public virtual DataTable\[\] FillSchema(DataSet dataSet, SchemaType schemaType);
-         public virtual IDataParameter\[\] GetFillParameters();
+         public virtual DataTable[] FillSchema(DataSet dataSet, SchemaType schemaType);
+         public virtual IDataParameter[] GetFillParameters();
          public void ResetFillLoadOption();
          public virtual bool ShouldSerializeAcceptChangesDuringFill();
          public virtual bool ShouldSerializeFillLoadOption();
@@ -2194,13 +2194,13 @@ The DbDataAdapter class is used in order to place a result set into a DataTable 
          public override int Fill(DataSet dataSet);
          public int Fill(DataTable dataTable);
          public int Fill(DataSet dataSet, string srcTable);
-         public int Fill(int startRecord, int maxRecords, params DataTable\[\] dataTables);
+         public int Fill(int startRecord, int maxRecords, params DataTable[] dataTables);
          public int Fill(DataSet dataSet, int startRecord, int maxRecords, string srcTable);
-         public override DataTable\[\] FillSchema(DataSet dataSet, SchemaType schemaType);
+         public override DataTable[] FillSchema(DataSet dataSet, SchemaType schemaType);
          public DataTable FillSchema(DataTable dataTable, SchemaType schemaType);
-         public DataTable\[\] FillSchema(DataSet dataSet, SchemaType schemaType, string srcTable);
-         public override IDataParameter\[\] GetFillParameters();
-         public int Update(DataRow\[\] dataRows);
+         public DataTable[] FillSchema(DataSet dataSet, SchemaType schemaType, string srcTable);
+         public override IDataParameter[] GetFillParameters();
+         public int Update(DataRow[] dataRows);
          public override int Update(DataSet dataSet);
          public int Update(DataTable dataTable);
          public int Update(DataSet dataSet, string srcTable);
@@ -2210,7 +2210,7 @@ The DbDataAdapter class is used in order to place a result set into a DataTable 
 
 The DbDataAdapter.Fill() overloaded method executes the DbCommand passed to its SelectCommand property and fills either a DataTable or a DataSet by executing the query against the database.
 
-    cmd.CommandText = "select \* from COUNTRY";
+    cmd.CommandText = "select * from COUNTRY";
  
      using (DbDataAdapter adapter = factory.CreateDataAdapter())
      {
@@ -2226,11 +2226,11 @@ The DbDataAdapter.Fill() overloaded method executes the DbCommand passed to its 
 
 A DataSet object is eventually a collection of DataTable objects. An oveloaded version of the DbDataAdapter.Fill() can be used in order to select multiple tables and place them into a DataSet object. The DataSet class provides the Tables property of type DataTableCollection. When the Fill() is used with a DataSet it creates a new DataTable object for each selected table. That new table is added to the Tables of the DataSet.
 
-    SelectTables(new string\[\] { "COUNTRY", "CITY", "TRADER", "MATERIAL", "TRADE", "TRADE\_LINES" });
+    SelectTables(new string[] { "COUNTRY", "CITY", "TRADER", "MATERIAL", "TRADE", "TRADE_LINES" });
      
      ...    
  
-     void SelectTables(string\[\] TableNames)
+     void SelectTables(string[] TableNames)
      {
          using (DbConnection con = factory.CreateConnection())
          {
@@ -2243,23 +2243,23 @@ A DataSet object is eventually a collection of DataTable objects. An oveloaded v
              {
                  adapter.SelectCommand = cmd;
  
-                 /\*  The DbDataAdapter.Fill() uses the DataSet.Tables property.
+                 /*  The DbDataAdapter.Fill() uses the DataSet.Tables property.
                      It creates a new DataTable object for each selected table.
-                     That new table is added to the Tables of the DataSet.\*/
+                     That new table is added to the Tables of the DataSet.*/
                  foreach (string s in TableNames)
                  {
-                     cmd.CommandText = string.Format("select \* from {0}", s);
+                     cmd.CommandText = string.Format("select * from {0}", s);
                      adapter.Fill(ds, s);
                  }
              }
  
-             /\* add table names to the combo box \*/
+             /* add table names to the combo box */
              for (int i = 0; i < ds.Tables.Count; i++)
-                 cboTableNames.Items.Add(ds.Tables\[i\].TableName);
+                 cboTableNames.Items.Add(ds.Tables[i].TableName);
  
              cboTableNames.SelectedIndex = 0;
  
-             Grid.DataSource = ds.Tables\[0\];
+             Grid.DataSource = ds.Tables[0];
          }
      } 
      
@@ -2276,18 +2276,18 @@ The DataAdapter has the property TableMappings of type DataTableMappingCollectio
  
          public int Count { get; }
  
-         public DataTableMapping this\[int index\] { get; set; }
-         public DataTableMapping this\[string sourceTable\] { get; set; }
+         public DataTableMapping this[int index] { get; set; }
+         public DataTableMapping this[string sourceTable] { get; set; }
  
          public int Add(object value);
          public DataTableMapping Add(string sourceTable, string dataSetTable);
          public void AddRange(Array values);
-         public void AddRange(DataTableMapping\[\] values);
+         public void AddRange(DataTableMapping[] values);
          public void Clear();
          public bool Contains(object value);
          public bool Contains(string value);
          public void CopyTo(Array array, int index);
-         public void CopyTo(DataTableMapping\[\] array, int index);
+         public void CopyTo(DataTableMapping[] array, int index);
          public DataTableMapping GetByDataSetTable(string dataSetTable);
          public IEnumerator GetEnumerator();
          public static DataTableMapping GetTableMappingBySchemaAction(DataTableMappingCollection tableMappings, string sourceTable, string dataSetTable, MissingMappingAction mappingAction);
@@ -2310,7 +2310,7 @@ The DataTableMappingCollection is a collection of DataTableMapping objects.
      {
          public DataTableMapping();
          public DataTableMapping(string sourceTable, string dataSetTable);
-         public DataTableMapping(string sourceTable, string dataSetTable, DataColumnMapping\[\] columnMappings);
+         public DataTableMapping(string sourceTable, string dataSetTable, DataColumnMapping[] columnMappings);
  
          public DataColumnMappingCollection ColumnMappings { get; }
          public string DataSetTable { get; set; }
@@ -2332,18 +2332,18 @@ A DataTableMapping object represents the mapping between a DataTable object and 
  
          public int Count { get; }
  
-         public DataColumnMapping this\[int index\] { get; set; }
-         public DataColumnMapping this\[string sourceColumn\] { get; set; }
+         public DataColumnMapping this[int index] { get; set; }
+         public DataColumnMapping this[string sourceColumn] { get; set; }
  
          public int Add(object value);
          public DataColumnMapping Add(string sourceColumn, string dataSetColumn);
          public void AddRange(Array values);
-         public void AddRange(DataColumnMapping\[\] values);
+         public void AddRange(DataColumnMapping[] values);
          public void Clear();
          public bool Contains(object value);
          public bool Contains(string value);
          public void CopyTo(Array array, int index);
-         public void CopyTo(DataColumnMapping\[\] array, int index);
+         public void CopyTo(DataColumnMapping[] array, int index);
          public DataColumnMapping GetByDataSetColumn(string value);
          public static DataColumnMapping GetColumnMappingBySchemaAction(DataColumnMappingCollection columnMappings, string sourceColumn, MissingMappingAction mappingAction);
          public static DataColumn GetDataColumn(DataColumnMappingCollection columnMappings, string sourceColumn, Type dataType, DataTable dataTable, MissingMappingAction mappingAction, MissingSchemaAction schemaAction);
@@ -2393,7 +2393,7 @@ In short, the classes DataTableMappingCollection, DataTableMapping, DataColumnMa
          DataColumnMapping columnMapping = new DataColumnMapping();
          tableMapping.ColumnMappings.Add(columnMapping);
          columnMapping.DataSetColumn = "ID";
-         columnMapping.SourceColumn = "CUST\_ID";
+         columnMapping.SourceColumn = "CUST_ID";
          
          ...
      }
@@ -2406,9 +2406,9 @@ The DbDataAdapter.Fill() and Update() methods use internally mapping information
 
 The DbDataAdapter.FillSchema() method retrieves schema information based on the SelectCommand of the adapter.
 
-    public override DataTable\[\] FillSchema(DataSet dataSet, SchemaType schemaType);
+    public override DataTable[] FillSchema(DataSet dataSet, SchemaType schemaType);
      public DataTable FillSchema(DataTable dataTable, SchemaType schemaType);
-     public DataTable\[\] FillSchema(DataSet dataSet, SchemaType schemaType, string srcTable);
+     public DataTable[] FillSchema(DataSet dataSet, SchemaType schemaType, string srcTable);
      
  
 
@@ -2459,7 +2459,7 @@ FillSchema() preserves any schema already defined in the DataTable objects.
      
      ...
  
-     string SQL = @"select \* from CITY";
+     string SQL = @"select * from CITY";
  
      DataTable table = new DataTable("City");
      table.Columns.Add("Flag", typeof(System.Boolean));
@@ -2508,7 +2508,7 @@ The ADO.NET provides the DbTransaction class which represents a transaction.
 
 Here is an example using the DbTransaction class.
 
-    void Exec(string\[\] SQL)
+    void Exec(string[] SQL)
      {
          using (DbConnection con = factory.CreateConnection())
          {
@@ -2574,14 +2574,14 @@ The isolation level of a transaction controls how and when changes made by the t
 
 see also:
 
-*   [http://en.wikipedia.org/wiki/Database\_transaction](   http://en.wikipedia.org/wiki/Database_transaction)
-*   [http://en.wikipedia.org/wiki/Isolation\_(computer\_science)](http://en.wikipedia.org/wiki/Isolation_(computer_science))
+*   [http://en.wikipedia.org/wiki/Database_transaction](   http://en.wikipedia.org/wiki/Database_transaction)
+*   [http://en.wikipedia.org/wiki/Isolation_(computer_science)](http://en.wikipedia.org/wiki/Isolation_(computer_science))
 
 #### Posting changes back to the datasource with the DbDataAdapter.Update() method
 
 The DbDataAdapter class provides the Update() method for posting changes back to the underlying datasource.
 
-    public int Update(DataRow\[\] dataRows);
+    public int Update(DataRow[] dataRows);
      public override int Update(DataSet dataSet);
      public int Update(DataTable dataTable);
      public int Update(DataSet dataSet, string srcTable);
@@ -2643,7 +2643,7 @@ Here is an example which uses the DbDataAdapter.Update() method.
              InitializeComponent();
          }
  
-         const string MsAccessFileName = @"..\\..\\..\\Lessons.MDB";
+         const string MsAccessFileName = @"..\..\..\Lessons.MDB";
          readonly string cs = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=""{0}"" ", Path.GetFullPath(MsAccessFileName));
          DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.OleDb");
  
@@ -2652,7 +2652,7 @@ Here is an example which uses the DbDataAdapter.Update() method.
          DataTable table;
          DbDataAdapter adapter;      
  
-         private void MainForm\_Load(object sender, EventArgs e)
+         private void MainForm_Load(object sender, EventArgs e)
          {
              ds = new DataSet("temp");
              table = ds.Tables.Add("COUNTRY");            
@@ -2665,11 +2665,11 @@ Here is an example which uses the DbDataAdapter.Update() method.
                  con.Open();
  
                  DbCommand cmd = con.CreateCommand();
-                 cmd.CommandText = "select \* from COUNTRY";
+                 cmd.CommandText = "select * from COUNTRY";
   
                  adapter.SelectCommand = cmd;
  
-                 /\* use FillSchema() to get any constraints from the table \*/
+                 /* use FillSchema() to get any constraints from the table */
                  adapter.FillSchema(table, SchemaType.Source);
                  adapter.Fill(table);
  
@@ -2677,14 +2677,14 @@ Here is an example which uses the DbDataAdapter.Update() method.
              }
          }
  
-         private void MainForm\_FormClosed(object sender, FormClosedEventArgs e)
+         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
          {
              adapter.Dispose();
          }
  
-         private void button1\_Click(object sender, EventArgs e)
+         private void button1_Click(object sender, EventArgs e)
          {
-             /\* create a DbCommandBuilder and link it to the adapter \*/
+             /* create a DbCommandBuilder and link it to the adapter */
              DbCommandBuilder commandBuilder = factory.CreateCommandBuilder();
              commandBuilder.DataAdapter = adapter;
  
@@ -2693,17 +2693,17 @@ Here is an example which uses the DbDataAdapter.Update() method.
                  con.ConnectionString = cs;
                  con.Open();
  
-                 /\* The SelectCommand is already defined in the MainForm\_Load \*/
+                 /* The SelectCommand is already defined in the MainForm_Load */
                  adapter.SelectCommand.Connection = con;
  
-                 /\* link the auto-generated commands to the adapter \*/
+                 /* link the auto-generated commands to the adapter */
                  adapter.InsertCommand = commandBuilder.GetInsertCommand();
                  adapter.UpdateCommand = commandBuilder.GetUpdateCommand();
                  adapter.DeleteCommand = commandBuilder.GetDeleteCommand();
  
-                 /\*  instruct adapter to refresh the autoincrement primary key back to the client 
+                 /*  instruct adapter to refresh the autoincrement primary key back to the client 
                      NOTE: this will not work for the OleDb and MS Access. It should work with
-                     other datasources such as MS SQL, Oracle etc, though.   \*/
+                     other datasources such as MS SQL, Oracle etc, though.   */
                  adapter.InsertCommand.UpdatedRowSource = UpdateRowSource.Both;  
                  adapter.InsertCommand.CommandText += Environment.NewLine + "SELECT @@IDENTITY as ID";
  
@@ -2723,9 +2723,9 @@ ADO.NET is capable of executing parameterized commands. In a parameterized comma
 
 Unfortunately the syntax used in creating a parameterized SQL statement varies, depending on the ADO.NET Data Provider. Consider the same SQL SELECT statement written for the various providers.
 
-    select \* from CUSTOMER where ID > @ID       // SqlClient
-     select \* from CUSTOMER where ID > ?         // OleDb and Odbc
-     select \* from CUSTOMER where ID > :ID       // OracleClient   
+    select * from CUSTOMER where ID > @ID       // SqlClient
+    select * from CUSTOMER where ID > ?         // OleDb and Odbc
+    select * from CUSTOMER where ID > :ID       // OracleClient   
      
  
 
@@ -2745,8 +2745,8 @@ The DbCommand provides the Parameters property of type DbParameterCollection.
          public abstract bool IsSynchronized { get; }
          public abstract object SyncRoot { get; }
  
-         public DbParameter this\[int index\] { get; set; }
-         public DbParameter this\[string parameterName\] { get; set; }
+         public DbParameter this[int index] { get; set; }
+         public DbParameter this[string parameterName] { get; set; }
  
          public abstract int Add(object value);
          public abstract void AddRange(Array values);
@@ -2802,18 +2802,18 @@ Given the next SQL SELECT statement
     string SelectSql =      "select                                                        " + Environment.NewLine +
                              "   TRADE.ID                 as ID                             " + Environment.NewLine +
                              "  ,TRADER.NAME              as CUSTOMER                       " + Environment.NewLine +
-                             "  ,TRADE.TRADE\_DATE         as TRADE\_DATE                     " + Environment.NewLine +
-                             "  ,TRADE.TOTAL\_VALUE        as TOTAL                          " + Environment.NewLine +
+                             "  ,TRADE.TRADE_DATE         as TRADE_DATE                     " + Environment.NewLine +
+                             "  ,TRADE.TOTAL_VALUE        as TOTAL                          " + Environment.NewLine +
                              "from                                                          " + Environment.NewLine +
                              "  TRADE                                                       " + Environment.NewLine +
-                             "    left join TRADER on TRADER.ID = TRADE.TRADER\_ID           " + Environment.NewLine
+                             "    left join TRADER on TRADER.ID = TRADE.TRADER_ID           " + Environment.NewLine
                              ;
                              
  
 
 here is an example which creates and executes a parameterized query for the OleDb data provider.
 
-    private void button1\_Click(object sender, EventArgs e)
+    private void button1_Click(object sender, EventArgs e)
      {           
          using (DbConnection Con = factory.CreateConnection())
          {
@@ -2826,15 +2826,15 @@ here is an example which creates and executes a parameterized query for the OleD
              // 1. Where clause preparation.
              // ===============================================================
  
-             /\* TradeDate \*/
-             string Where = "where TRADE.TRADE\_DATE >= ? " + Environment.NewLine;          
+             /* TradeDate */
+             string Where = "where TRADE.TRADE_DATE >= ? " + Environment.NewLine;          
  
              DbParameter Param = factory.CreateParameter();
              Param.ParameterName = "TradeDate";
              Param.Value = edtDate.Value;
              Cmd.Parameters.Add(Param);
  
-             /\* Customer \*/
+             /* Customer */
              if (!string.IsNullOrEmpty(edtCustomer.Text))
              {
                  Where += " and TRADER.NAME like ? " + Environment.NewLine;
@@ -2849,12 +2849,12 @@ here is an example which creates and executes a parameterized query for the OleD
                  Cmd.Parameters.Add(Param);
              }
  
-             /\* Total \*/
+             /* Total */
              if (!string.IsNullOrEmpty(edtTotal.Text))
              {
                  double Total = 0;
                  if (double.TryParse(edtTotal.Text, out Total))
-                     Where += " and TRADE.TOTAL\_VALUE >= ? " + Environment.NewLine;
+                     Where += " and TRADE.TOTAL_VALUE >= ? " + Environment.NewLine;
  
                  Param = factory.CreateParameter();
                  Param.ParameterName = "Total";
@@ -2883,7 +2883,7 @@ here is an example which creates and executes a parameterized query for the OleD
 
 see also:
 
-*   [http://en.wikipedia.org/wiki/SQL\_injection](   http://en.wikipedia.org/wiki/SQL_injection)
+*   [http://en.wikipedia.org/wiki/SQL_injection](   http://en.wikipedia.org/wiki/SQL_injection)
 
 #### A helper library
 
@@ -2895,7 +2895,7 @@ The DataProviders static class plays a role similar to the DbProviderFactories c
          {
  
 
-#if !NET\_CF
+#if !NET_CF
 
             Add(new OleDbProvider());
              Add(new MsAccessProvider());
@@ -2922,7 +2922,7 @@ The user works by getting access to a concrete DataProvider using the DataProvid
 
 A DataProvider Alias is a string uniquely identifying a DataProvider. The DataProviders class contains public fields for all supported DataProvider classes.
 
-    /\* Provider aliases \*/
+    /* Provider aliases */
      public const string MsSql = "MsSql";
      public const string SqlCe = "SqlCe";
      public const string OleDb = "OleDb";
@@ -2941,7 +2941,7 @@ A DataProvider Alias is a string uniquely identifying a DataProvider. The DataPr
 
 Tripous can handle connection strings that may contain such an alias. For example
 
-    Alias=OleDb; Provider=Microsoft.Jet.OLEDB.4.0; Data Source=C:\\MyApp\\Data.MDB;
+    Alias=OleDb; Provider=Microsoft.Jet.OLEDB.4.0; Data Source=C:\MyApp\Data.MDB;
      
  
 
@@ -2977,20 +2977,20 @@ The DataProvider.ParamPrefix read-only property indicates the prefix used by the
 
 indicates the mode of the parameter name and prefix the native ADO.NET data provider uses. To help in analyzing SQL statements, creating DbParameter objects automatically, and assigning data values to those parameters, the DataProvider provides the following two methods.
 
-    public DbCommand CreateCommand(DbConnection Connection, string SQL, params object\[\] Params);
-     public void SetupCommand(DbCommand Command, string SQL, params object\[\] Params);
+    public DbCommand CreateCommand(DbConnection Connection, string SQL, params object[] Params);
+     public void SetupCommand(DbCommand Command, string SQL, params object[] Params);
      
  
 
 The CreateCommand() has the same logic as the SetupCommand() plus that it creates and returns a DbCommand object. The SetupCommand()
 
     /// 1. Analyzes the passed SQL which may contain parameter names prefixed by the DataProviders.GlobalPrefix, i.e.  
-     ///       select \* from CUSTOMER where ID > :ID            
+     ///       select * from CUSTOMER where ID > :ID            
      /// 2. Converts the passed SQL to be what the native ADO.NET Data Provider expects to be and assigns the Command.CommandText     
      ///    For the MS SQL the above statement would be converted to
-     ///      select \* from CUSTOMER where ID > @ID
+     ///      select * from CUSTOMER where ID > @ID
      ///    and for the OleDb would be converted to
-     ///      select \* from CUSTOMER where ID > ?
+     ///      select * from CUSTOMER where ID > ?
      /// 3. Creates DbParameter objects and adds them to the Command.Parameters collection. 
      ///    The ParameterName of those objects has no prefix, ie. ID.
      ///    If required by the provider though, a later call to PrefixToNative() method would arrange the values
@@ -3002,32 +3002,32 @@ The CreateCommand() has the same logic as the SetupCommand() plus that it create
 
 The DataProvider.Select() and Exec() methods execute SELECT and INSERT, UPDATE and DELETE statements.
 
-    public DataTable Select(string ConnectionString, string SQL, params object\[\] Params);
+    public DataTable Select(string ConnectionString, string SQL, params object[] Params);
      public DataTable Select(string ConnectionString, string SQL);
      public DataTable Select(DbCommand Command);
-     public void Exec(string ConnectionString, string SQL, params object\[\] Params);
+     public void Exec(string ConnectionString, string SQL, params object[] Params);
      public void Exec(string ConnectionString, string SQL);
      
  
 
 Here is an example which utilizes those classes.
 
-    private void button2\_Click(object sender, EventArgs e)
+    private void button2_Click(object sender, EventArgs e)
      {
          // 1. Where clause preparation.
          // ===============================================================
  
-         /\* prepare a Params Dictionary to be passed to DbCommand.Parameters \*/
+         /* prepare a Params Dictionary to be passed to DbCommand.Parameters */
          Dictionary<string, object> Params = new Dictionary<string, object>();
  
  
-         /\* TradeDate 
-            Tripous DataProviders use the GlobalPrefix which defaults to : for all ADO.NET Data Providers. \*/
-         string Where = "where TRADE.TRADE\_DATE >= :TradeDate " + Environment.NewLine ;
+         /* TradeDate 
+            Tripous DataProviders use the GlobalPrefix which defaults to : for all ADO.NET Data Providers. */
+         string Where = "where TRADE.TRADE_DATE >= :TradeDate " + Environment.NewLine ;
          Params.Add("TradeDate",  edtDate.Value.ToString("yyyy-MM-dd"));
  
  
-         /\* Customer \*/
+         /* Customer */
          if (!string.IsNullOrEmpty(edtCustomer.Text))
          {
              Where += " and TRADER.NAME like :Customer " + Environment.NewLine ;
@@ -3040,19 +3040,19 @@ Here is an example which utilizes those classes.
          }
  
  
-         /\* Total \*/
+         /* Total */
          if (!string.IsNullOrEmpty(edtTotal.Text))
          {
              double Total = 0;
              if (double.TryParse(edtTotal.Text, out Total))
              {
-                 Where += " and TRADE.TOTAL\_VALUE >= :Total " + Environment.NewLine;
+                 Where += " and TRADE.TOTAL_VALUE >= :Total " + Environment.NewLine;
                  Params.Add("Total", Total);                   
              }
          }
  
  
-         /\* displays the SELECT sql statement \*/
+         /* displays the SELECT sql statement */
          //MessageBox.Show(SelectSql + Where);
  
  
@@ -3065,7 +3065,7 @@ Here is an example which utilizes those classes.
              Con.ConnectionString = cs;
              Con.Open();
  
-             /\* creates the DbCommand, parses SQL, creates DbParameters, and assigns values \*/
+             /* creates the DbCommand, parses SQL, creates DbParameters, and assigns values */
              DbCommand Cmd = provider.CreateCommand(Con, SelectSql + Where, Params);
  
              using (DbDataAdapter adapter = provider.CreateAdapter())
@@ -3078,7 +3078,7 @@ Here is an example which utilizes those classes.
  
          Grid.DataSource = table;
  
-         /\* the whole Command execution could be written in a single line as \*/
+         /* the whole Command execution could be written in a single line as */
          //Grid.DataSource = provider.Select(cs, SelectSql + Where, Params);
      }    
                
@@ -3090,9 +3090,9 @@ DDL statements include the CREATE, ALTER and DROP sql statements and it is used 
 
 DDL statements are executed by using the DbCommand.ExecuteNonQuery() method.
 
-    /\*  Executes not selectable SQL statements (CREATE, DROP, ALTER, INSERT, UPDATE, DELETE). 
-         The statement is written by the user in the Editor text box. \*/
-     private void btnExec\_Click(object sender, EventArgs e)
+    /*  Executes not selectable SQL statements (CREATE, DROP, ALTER, INSERT, UPDATE, DELETE). 
+         The statement is written by the user in the Editor text box. */
+     private void btnExec_Click(object sender, EventArgs e)
      {
          try
          {
@@ -3119,7 +3119,7 @@ DDL statements are executed by using the DbCommand.ExecuteNonQuery() method.
 
 see also:
 
-*   [http://en.wikipedia.org/wiki/Data\_Definition\_Language](   http://en.wikipedia.org/wiki/Data_Definition_Language)
+*   [http://en.wikipedia.org/wiki/Data_Definition_Language](   http://en.wikipedia.org/wiki/Data_Definition_Language)
 
 #### Using stored procedures
 
@@ -3138,7 +3138,7 @@ Here is a selectable MS SQL stored procedure
      as
        set nocount on
  
-       select \* from TEST\_TABLE
+       select * from TEST_TABLE
        where ID >= @ID
        
  
@@ -3186,8 +3186,8 @@ is where the direction of the parameter is defined.
 
 Here is an example which demonstrates how to call the above two MS SQL stored procedures.
 
-    /\* Demonstrates how to use selectable and non-selectable stored procedures \*/
-     private void btnExecStoreProc\_Click(object sender, EventArgs e)
+    /* Demonstrates how to use selectable and non-selectable stored procedures */
+     private void btnExecStoreProc_Click(object sender, EventArgs e)
      {
          try
          {
@@ -3198,16 +3198,16 @@ Here is an example which demonstrates how to call the above two MS SQL stored pr
  
                  DbCommand Cmd = Con.CreateCommand();
  
-                 /\* by default CommandType is Text, that is any DDL or DML statement \*/
+                 /* by default CommandType is Text, that is any DDL or DML statement */
                  Cmd.CommandType = CommandType.StoredProcedure;
                  Cmd.Connection = Con;
  
                  DbParameter Param;
  
  
-                 /\* AddNumbers is a NON-selectable stored proc that adds two numbers passed as parameters. 
+                 /* AddNumbers is a NON-selectable stored proc that adds two numbers passed as parameters. 
                     The sum is returned as an output parameter. 
-                    DbParameter.Direction property controls the direction (in/out/in-out) of a parameter \*/
+                    DbParameter.Direction property controls the direction (in/out/in-out) of a parameter */
                  Cmd.Parameters.Clear();
                  Cmd.CommandText = "AddNumbers";
  
@@ -3229,15 +3229,15 @@ Here is an example which demonstrates how to call the above two MS SQL stored pr
                  Param.Value = 0;
                  Cmd.Parameters.Add(Param);
  
-                 /\* non-selectable stored procs are executed by using the DbCommand.ExecuteScalar() \*/
+                 /* non-selectable stored procs are executed by using the DbCommand.ExecuteScalar() */
                  Cmd.ExecuteScalar();
  
-                 /\* read and display the output parameter after stored proc execution \*/
-                 string ProcResult = Cmd.Parameters\["@Result"\].Value.ToString();
+                 /* read and display the output parameter after stored proc execution */
+                 string ProcResult = Cmd.Parameters["@Result"].Value.ToString();
                  MessageBox.Show(ProcResult);
  
  
-                 /\* SelectTestTable is a selectable stored proc that accepts a single input parameter \*/
+                 /* SelectTestTable is a selectable stored proc that accepts a single input parameter */
                  Cmd.Parameters.Clear();
                  Cmd.CommandText = "SelectTestTable";                    
  
@@ -3250,7 +3250,7 @@ Here is an example which demonstrates how to call the above two MS SQL stored pr
                  DbDataAdapter adapter = factory.CreateDataAdapter();
                  adapter.SelectCommand = Cmd;
  
-                 /\* selectable stored procs are executed by using the DbDataAdapter.Fill() \*/
+                 /* selectable stored procs are executed by using the DbDataAdapter.Fill() */
                  DataTable Table = new DataTable();
                  adapter.Fill(Table);
  
@@ -3270,17 +3270,17 @@ Here is an example which demonstrates how to call the above two MS SQL stored pr
 
 see also:
 
-*   [http://www.devcity.net/Articles/18/msaccess\_sp.aspx](   http://www.devcity.net/Articles/18/msaccess_sp.aspx)
+*   [http://www.devcity.net/Articles/18/msaccess_sp.aspx](   http://www.devcity.net/Articles/18/msaccess_sp.aspx)
 
 #### Reading and writing BLOB data
 
 Columns of type BLOB (Binary Large Object) are used in storing variable length binary data such as images or long texts.
 
-Unfortunately each database vendor uses its own data type to represent blob data. MS SQL and MS Access use the "IMAGE" data type for binary blobs and the "TEXT" data type for text blobs. Oracle has the "BLOB" and the "CLOB" respectively. Firebird/Interbase has the "BLOB SUB\_TYPE 0" and the "BLOB SUB\_TYPE TEXT".
+Unfortunately each database vendor uses its own data type to represent blob data. MS SQL and MS Access use the "IMAGE" data type for binary blobs and the "TEXT" data type for text blobs. Oracle has the "BLOB" and the "CLOB" respectively. Firebird/Interbase has the "BLOB SUB_TYPE 0" and the "BLOB SUB_TYPE TEXT".
 
 The DbType.Binary is the flag used with blob types and DbParameter objects. It allows a length of up to 8000 bytes, according to documentation. Specific data provider types such as the SqlDbType.Image of the SqlClient allows for greater length. In most cases a DbParameter object infers the right DbType data type, that is DbType.Binary, when it is passed an array of bytes and it also adapts the right DbParameter.Size.
 
-    byte\[\] Bytes = File.ReadAllBytes(FileName);
+    byte[] Bytes = File.ReadAllBytes(FileName);
      
      ...
      
@@ -3301,12 +3301,12 @@ Here is an example application which handles blob columns and images by using Db
              SelectTable();
          }
  
-         const string MsAccessFileName = @"..\\..\\..\\Lessons.MDB";
+         const string MsAccessFileName = @"..\..\..\Lessons.MDB";
          readonly string cs = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=""{0}"" ", Path.GetFullPath(MsAccessFileName));
          DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.OleDb");
  
  
-         /\* arranges the user interface \*/
+         /* arranges the user interface */
          void EnableCommands()
          {
              DataTable Table = Grid.DataSource as DataTable;
@@ -3316,7 +3316,7 @@ Here is an example application which handles blob columns and images by using Db
          }
  
  
-         /\* selects the PICTURES table and binds Grid and picBox to data \*/
+         /* selects the PICTURES table and binds Grid and picBox to data */
          void SelectTable()
          {
              picBox.DataBindings.Clear();
@@ -3330,7 +3330,7 @@ Here is an example application which handles blob columns and images by using Db
                  Con.Open();
  
                  DbCommand Cmd = Con.CreateCommand();
-                 Cmd.CommandText = "select \* from PICTURES";
+                 Cmd.CommandText = "select * from PICTURES";
  
                  using (DbDataAdapter adapter = factory.CreateDataAdapter())
                  {
@@ -3340,7 +3340,7 @@ Here is an example application which handles blob columns and images by using Db
  
                      Grid.DataSource = Table;
  
-                     /\* add a proper DataBinding to picBox \*/
+                     /* add a proper DataBinding to picBox */
                      picBox.DataBindings.Add("Image", Table, "IMG", true, DataSourceUpdateMode.OnPropertyChanged);
                  }
              }
@@ -3349,17 +3349,17 @@ Here is an example application which handles blob columns and images by using Db
          }
  
  
-         /\* inserts a picture from disk to the database  \*/
-         private void btnInsert\_Click(object sender, EventArgs e)
+         /* inserts a picture from disk to the database  */
+         private void btnInsert_Click(object sender, EventArgs e)
          {    
              OpenFileDialog Dlg = new OpenFileDialog();
    
-             Dlg.Filter = "bitmaps (\*.bmp)|\*.bmp|Jpegs (\*.jpg)|\*.jpg";       
+             Dlg.Filter = "bitmaps (*.bmp)|*.bmp|Jpegs (*.jpg)|*.jpg";       
  
              if (Dlg.ShowDialog() == DialogResult.OK)
              {
-                 /\* File.ReadAllBytes() reads the file and returns its data as an array of bytes \*/
-                 byte\[\] Bytes = File.ReadAllBytes(Dlg.FileName);
+                 /* File.ReadAllBytes() reads the file and returns its data as an array of bytes */
+                 byte[] Bytes = File.ReadAllBytes(Dlg.FileName);
  
                  using (DbConnection Con = factory.CreateConnection())
                  {
@@ -3372,9 +3372,9 @@ Here is an example application which handles blob columns and images by using Db
                      DbParameter Param = Cmd.CreateParameter();
                      Param.ParameterName = "IMG";                    
  
-                     /\*  after next assignement the DbParameter infers is DbType as DbType.Binary  
+                     /*  after next assignement the DbParameter infers is DbType as DbType.Binary  
                          which permits a length of up to 8000 bytes. Specific data provider types
-                         such as the SqlDbType.Image of the SqlClient allows for greater length. \*/
+                         such as the SqlDbType.Image of the SqlClient allows for greater length. */
                      Param.Value = Bytes; 
                      Cmd.Parameters.Add(Param);
  
@@ -3390,21 +3390,21 @@ Here is an example application which handles blob columns and images by using Db
  
  
  
-         /\* updates a row with a picture to the database \*/
-         private void btnUpdate\_Click(object sender, EventArgs e)
+         /* updates a row with a picture to the database */
+         private void btnUpdate_Click(object sender, EventArgs e)
          {
              if (!Grid.HasCurrentDataRow())
                  return;
  
              OpenFileDialog Dlg = new OpenFileDialog();
  
-             Dlg.Filter = "bitmaps (\*.bmp)|\*.bmp|Jpegs (\*.jpg)|\*.jpg";
+             Dlg.Filter = "bitmaps (*.bmp)|*.bmp|Jpegs (*.jpg)|*.jpg";
  
              if (Dlg.ShowDialog() == DialogResult.OK)
              {
  
-                 /\* File.ReadAllBytes() reads the file and returns its data as an array of bytes \*/
-                 byte\[\] Bytes = File.ReadAllBytes(Dlg.FileName);
+                 /* File.ReadAllBytes() reads the file and returns its data as an array of bytes */
+                 byte[] Bytes = File.ReadAllBytes(Dlg.FileName);
  
                  using (DbConnection Con = factory.CreateConnection())
                  {
@@ -3431,8 +3431,8 @@ Here is an example application which handles blob columns and images by using Db
              }
          }
  
-         /\* deletes a row \*/
-         private void btnDelete\_Click(object sender, EventArgs e)
+         /* deletes a row */
+         private void btnDelete_Click(object sender, EventArgs e)
          {
              if (!Grid.HasCurrentDataRow())
                  return;
@@ -3459,13 +3459,13 @@ Here is an example application which handles blob columns and images by using Db
 
 Another way to handle blob data is to directly assign a DataColumn in a DataRow and then call the DbDataAdapter.Update() method.
 
-    byte\[\] Bytes = File.ReadAllBytes(FileName);
+    byte[] Bytes = File.ReadAllBytes(FileName);
      
      ...
  
      DataRow Row = table.NewRow();
      table.Rows.Add(Row);
-     Row\["IMG"\] = Bytes;         
+     Row["IMG"] = Bytes;         
      
      ...
      
@@ -3477,7 +3477,7 @@ Another way to handle blob data is to directly assign a DataColumn in a DataRow 
 see also:
 
 *   [http://en.wikipedia.org/wiki/BLOB](   http://en.wikipedia.org/wiki/BLOB)
-*   [http://www.cvalde.net/misc/blob\_true\_history.htm](http://www.cvalde.net/misc/blob_true_history.htm)
+*   [http://www.cvalde.net/misc/blob_true_history.htm](http://www.cvalde.net/misc/blob_true_history.htm)
 
 #### Reading database schema information
 
@@ -3485,7 +3485,7 @@ The DbConnection class provides the GetSchema() method which returns schema info
 
     public virtual DataTable GetSchema();
      public virtual DataTable GetSchema(string collectionName);
-     public virtual DataTable GetSchema(string collectionName, string\[\] restrictionValues);
+     public virtual DataTable GetSchema(string collectionName, string[] restrictionValues);
      
  
 
@@ -3502,7 +3502,7 @@ Here is an example project.
              Initialize();
          }
  
-         const string MsAccessFileName = @"..\\..\\..\\Lessons.MDB";
+         const string MsAccessFileName = @"..\..\..\Lessons.MDB";
          readonly string cs = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=""{0}"" ", Path.GetFullPath(MsAccessFileName));
          DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.OleDb");
  
@@ -3516,11 +3516,11 @@ Here is an example project.
                  DataTable table = Con.GetSchema();
  
                  foreach (DataRow Row in table.Rows)
-                     cboCollections.Items.Add(Row\["CollectionName"\].ToString());
+                     cboCollections.Items.Add(Row["CollectionName"].ToString());
              }
          } 
  
-         private void cboCollections\_SelectedValueChanged(object sender, EventArgs e)
+         private void cboCollections_SelectedValueChanged(object sender, EventArgs e)
          {
              if (cboCollections.SelectedItem != null)
              {
@@ -3554,7 +3554,7 @@ In MS Visual Studio a typed dataset is created using the Add | New Item | Data |
 
 A typed dataset is a DataSet descendant which provides strongly typed access to database objects such as tables and columns. Consider the following code
 
-    dsLessons.CITY\[0\].ID
+    dsLessons.CITY[0].ID
  
  
 
@@ -3574,15 +3574,15 @@ In order to connect to non-Jet data using the Jet.OLEDB.4.0 ADO driver the "Exte
 
 To find what IISAM drivers are installed on a machine check the registry key
 
-    HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Jet\\4.0\\ISAM Formats 
+    HKEY_LOCAL_MACHINE\Software\Microsoft\Jet\4.0\ISAM Formats 
     
  
 
 Here are two ADO.NET connection strings for Excel, dBase and Text files respectively.
 
-    Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\\Data\\ExcelFile.xls"; Extended Properties=Excel 9.0;   
-     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\\Data\\"; Extended Properties=dBase IV;   
-     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\\Data\\"; Extended Properties=Text;  
+    Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\Data\ExcelFile.xls"; Extended Properties=Excel 9.0;   
+     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\Data\"; Extended Properties=dBase IV;   
+     Provider=Microsoft.Jet.OLEDB.4.0; Data Source="C:\Data\"; Extended Properties=Text;  
   
  
 
@@ -3630,7 +3630,7 @@ DataBindings is of type ControlBindingsCollection.
          public Control Control { get; }
          public DataSourceUpdateMode DefaultDataSourceUpdateMode { get; set; }
  
-         public Binding this\[string propertyName\] { get; }
+         public Binding this[string propertyName] { get; }
  
          public void Add(Binding binding);
          public Binding Add(string propertyName, object dataSource, string dataMember);
@@ -3692,11 +3692,11 @@ A Binding object represents a link between a property of a control and a data me
 
 The most common scenario is the binding of the Text property of a TextBox to a DataColumn of a DataTable.
 
-    textCustomer.DataBindings.Add("Text", tableCustomer, "CUSTOMER\_NAME");
+    textCustomer.DataBindings.Add("Text", tableCustomer, "CUSTOMER_NAME");
      
  
 
-In the above example, textCustomer is a TextBox control, the string "Text" refers to the Text property of the textCustomer, tableCustomer is a DataTable that acts as a datasource and the string "CUSTOMER\_NAME" refers to the CUSTOMER\_NAME DataColumn of the tableCustomer.
+In the above example, textCustomer is a TextBox control, the string "Text" refers to the Text property of the textCustomer, tableCustomer is a DataTable that acts as a datasource and the string "CUSTOMER_NAME" refers to the CUSTOMER_NAME DataColumn of the tableCustomer.
 
 #### Change notification requirements for simple data binding
 
@@ -3965,23 +3965,23 @@ Except IBindingList there are many other interfaces related to complex data bind
 
 Here is a code snippet taken form an example application that utilizes the BindingList<T>, among other choises, and user interface elements that support complex binding.
 
-    /\*  Using datasources of different types. 
-         It turns out that the BindingList<T> is the most flexible one. \*/
+    /*  Using datasources of different types. 
+         It turns out that the BindingList<T> is the most flexible one. */
  
-     //Person\[\] persons = { new Person(), new Person("Jane Doe", 30)   };
+     //Person[] persons = { new Person(), new Person("Jane Doe", 30)   };
      //List<Person> persons = new List<Person>(){ new Person(), new Person("Jane Doe", 30)  };
      BindingList<Person> persons = new BindingList<Person>() { new Person(), new Person("Jane Doe", 30) };
  
-     private void MainForm\_Load(object sender, EventArgs e)
+     private void MainForm_Load(object sender, EventArgs e)
      {      
          edtName.DataBindings.Add("Text", persons, "Name");
          edtAge.DataBindings.Add("Text", persons, "Age");
  
          Grid.DataSource = persons;
          
-         /\* if the DisplayMember is left unassigned then the binding mechanism calls 
+         /* if the DisplayMember is left unassigned then the binding mechanism calls 
             the ToString() method on the datasource element. Else it displays the defined member. 
-            Setting the ValueMember sets the DisplayMember too. \*/
+            Setting the ValueMember sets the DisplayMember too. */
          listBox.DataSource = persons; 
          //listBox.ValueMember = "Name";
      }
@@ -4004,8 +4004,8 @@ Here is the BindingContext class declaration.
  
          public bool IsReadOnly { get; }
  
-         public BindingManagerBase this\[object dataSource\] { get; }
-         public BindingManagerBase this\[object dataSource, string dataMember\] { get; }
+         public BindingManagerBase this[object dataSource] { get; }
+         public BindingManagerBase this[object dataSource, string dataMember] { get; }
  
          public event CollectionChangeEventHandler CollectionChanged;
  
@@ -4140,7 +4140,7 @@ A CurrencyManager maintains its own individual Position and Current property val
 
 It is possible to get access to a binding manager for a control and use it for navigation.
 
-    BindingManagerBase Manager = listBox1.BindingContext\[table\];
+    BindingManagerBase Manager = listBox1.BindingContext[table];
      Manager.Position++;
  
  
@@ -4167,15 +4167,15 @@ Here is an example which demonstrates the use of the BindingContext and the Curr
  
          void Initialize()
          {
-             /\* create and fill a table \*/
+             /* create and fill a table */
              table.Columns.Add("ID", typeof(System.Int32));
              table.Columns.Add("Name", typeof(System.String));
  
              for (int i = 1; i < 100; i++)
-                 table.Rows.Add(new object\[\] { i, "Name\_" + i.ToString() });
+                 table.Rows.Add(new object[] { i, "Name_" + i.ToString() });
  
  
-             /\* bind the two ListBox controls to the very same table \*/
+             /* bind the two ListBox controls to the very same table */
              listBox1.DataSource = table;
              listBox1.DisplayMember = "Name";
  
@@ -4183,23 +4183,23 @@ Here is an example which demonstrates the use of the BindingContext and the Curr
              listBox2.DisplayMember = "Name";
  
  
-             /\* if the next line is commented, then both the above ListBox controls 
+             /* if the next line is commented, then both the above ListBox controls 
                 will use the same CurrencyManager, the one provided by the Form's BindingContext.
                 If the next line is left un-commented then the second ListBox will have a separate
                 BindingContext and thus a separate CurrencyManager, although it continues to be bound
-                to the same datasource \*/
+                to the same datasource */
              listBox2.BindingContext = new BindingContext(); 
          }
  
-         private void btnPrevious\_Click(object sender, EventArgs e)
+         private void btnPrevious_Click(object sender, EventArgs e)
          {
-             BindingManagerBase Manager = listBox1.BindingContext\[table\];
+             BindingManagerBase Manager = listBox1.BindingContext[table];
              Manager.Position--;
          } 
  
-         private void btnNext\_Click(object sender, EventArgs e)
+         private void btnNext_Click(object sender, EventArgs e)
          {
-             BindingManagerBase Manager = listBox1.BindingContext\[table\];
+             BindingManagerBase Manager = listBox1.BindingContext[table];
              Manager.Position++;
          }        
      }
@@ -4244,7 +4244,7 @@ The BindingSource component added to the BCL with the .Net 2.0.
          public virtual bool SupportsSorting { get; }
          public virtual object SyncRoot { get; }
  
-         public virtual object this\[int index\] { get; set; }
+         public virtual object this[int index] { get; set; }
  
          public event AddingNewEventHandler AddingNew;
          public event BindingCompleteEventHandler BindingComplete;
@@ -4269,8 +4269,8 @@ The BindingSource component added to the BCL with the .Net 2.0.
          public virtual int Find(PropertyDescriptor prop, object key);
          public int Find(string propertyName, object key);
          public virtual IEnumerator GetEnumerator();
-         public virtual PropertyDescriptorCollection GetItemProperties(PropertyDescriptor\[\] listAccessors);
-         public virtual string GetListName(PropertyDescriptor\[\] listAccessors);
+         public virtual PropertyDescriptorCollection GetItemProperties(PropertyDescriptor[] listAccessors);
+         public virtual string GetListName(PropertyDescriptor[] listAccessors);
          public virtual CurrencyManager GetRelatedCurrencyManager(string dataMember);
          public virtual int IndexOf(object value);
          public virtual void Insert(int index, object value);
@@ -4351,7 +4351,7 @@ Here is an example.
  
          void Initialize()
          {
-             /\* bind the bs BindingSource to the Person class \*/
+             /* bind the bs BindingSource to the Person class */
              bs.DataSource = typeof(Person);
  
              Grid.DataSource = bs;
@@ -4406,10 +4406,10 @@ Here is an example of using the AddingNew event.
  
          void Initialize()
          {
-             /\* AddingNew event is triggered any time a new row is going to be added to the BindingSource \*/
-             bs.AddingNew += new AddingNewEventHandler(BindingSource\_AddingNew);
+             /* AddingNew event is triggered any time a new row is going to be added to the BindingSource */
+             bs.AddingNew += new AddingNewEventHandler(BindingSource_AddingNew);
  
-             /\* AddNew() triggers the AddingNew event \*/
+             /* AddNew() triggers the AddingNew event */
              bs.AddNew();
  
              Grid.DataSource = bs;
@@ -4418,7 +4418,7 @@ Here is an example of using the AddingNew event.
              edtAge.DataBindings.Add("Text", bs, "Age");
          }
  
-         void BindingSource\_AddingNew(object sender, AddingNewEventArgs e)
+         void BindingSource_AddingNew(object sender, AddingNewEventArgs e)
          {
              e.NewObject = new Person();
          }
@@ -4440,7 +4440,7 @@ Here is an example which utilizes a master-detail relationship between two table
              Initialize();
          }
  
-         const string MsAccessFileName = @"..\\..\\..\\Lessons.MDB";
+         const string MsAccessFileName = @"..\..\..\Lessons.MDB";
          readonly string cs = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=""{0}"" ", Path.GetFullPath(MsAccessFileName));
          DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.OleDb");
  
@@ -4449,8 +4449,8 @@ Here is an example which utilizes a master-detail relationship between two table
          BindingSource bsDetail = new BindingSource();
  
  
-         /\* selects TableNames tables from the database into the ds DataSet object. \*/
-         void SelectTables(string\[\] TableNames)
+         /* selects TableNames tables from the database into the ds DataSet object. */
+         void SelectTables(string[] TableNames)
          {            
              using (DbConnection Con = factory.CreateConnection())
              {
@@ -4465,7 +4465,7 @@ Here is an example which utilizes a master-detail relationship between two table
   
                      foreach (string TableName in TableNames)
                      {
-                         Cmd.CommandText = string.Format("select \* from {0}", TableName);
+                         Cmd.CommandText = string.Format("select * from {0}", TableName);
                          Adapter.FillSchema(ds, SchemaType.Source, TableName);
                          Adapter.Fill(ds, TableName);
                      }
@@ -4475,23 +4475,23 @@ Here is an example which utilizes a master-detail relationship between two table
  
          void Initialize()
          {
-             /\* select the two tables \*/
-             SelectTables(new string\[\] {"COUNTRY", "CITY"});
+             /* select the two tables */
+             SelectTables(new string[] {"COUNTRY", "CITY"});
  
-             /\* create a relation between those two tables \*/
-             ds.Relations.Add("CountryCities", ds.Tables\["COUNTRY"\].Columns\["ID"\], ds.Tables\["CITY"\].Columns\["COUNTRY\_ID"\]);
+             /* create a relation between those two tables */
+             ds.Relations.Add("CountryCities", ds.Tables["COUNTRY"].Columns["ID"], ds.Tables["CITY"].Columns["COUNTRY_ID"]);
  
-             /\* the top master BindingSource. It gets as DataSource the ds DataSet 
-                and as DataMember the name of the COUNTRY table \*/
+             /* the top master BindingSource. It gets as DataSource the ds DataSet 
+                and as DataMember the name of the COUNTRY table */
              bsMaster.DataSource = ds;
              bsMaster.DataMember = "COUNTRY"; 
  
-             /\* the detail BindingSource. It gets as DataSource a master BindingSource 
-                and as DataMember the name of a proper Relation object \*/
+             /* the detail BindingSource. It gets as DataSource a master BindingSource 
+                and as DataMember the name of a proper Relation object */
              bsDetail.DataSource = bsMaster;
              bsDetail.DataMember = "CountryCities";
  
-             /\* set DataGridView datasources  \*/
+             /* set DataGridView datasources  */
              gridMaster.DataSource = bsMaster;
              gridDetail.DataSource = bsDetail;
          }
@@ -4511,7 +4511,7 @@ In database programming a lookup operation resembles a dictionary search: it ret
 
 The DisplayMember and ValueMember properties of the ListBox, CheckedListBox and ComboBox controls serve that lookup logic.
 
-    cboCountry.DataSource = ds.Tables\["COUNTRY"\];
+    cboCountry.DataSource = ds.Tables["COUNTRY"];
      cboCountry.DisplayMember = "NAME";
      cboCountry.ValueMember = "ID";
      
@@ -4521,11 +4521,11 @@ In the above example the cboCountry is bound to the COUNTRY table. It will displ
 
 If the value of the SelectedValue property has to be passed to a column in another DataTable, then a proper Binding is required for the control.
 
-    cboCountry.DataBindings.Add("SelectedValue", ds.Tables\["CITY"\], "COUNTRY\_ID");
+    cboCountry.DataBindings.Add("SelectedValue", ds.Tables["CITY"], "COUNTRY_ID");
  
  
 
-Now, everytime the SelectedValue property changes value, it assignes the CITY.COUNTRY\_ID column.
+Now, everytime the SelectedValue property changes value, it assignes the CITY.COUNTRY_ID column.
 
 Here is a complete example displaying the lookup usage of the ComboBox and ListBox controls.
 
@@ -4538,14 +4538,14 @@ Here is a complete example displaying the lookup usage of the ComboBox and ListB
              Initialize();
          }
  
-         const string MsAccessFileName = @"..\\..\\..\\Lessons.MDB";
+         const string MsAccessFileName = @"..\..\..\Lessons.MDB";
          readonly string cs = string.Format(@"Provider=Microsoft.Jet.OLEDB.4.0; Data Source=""{0}"" ", Path.GetFullPath(MsAccessFileName));
          DbProviderFactory factory = DbProviderFactories.GetFactory("System.Data.OleDb");
  
          DataSet ds = new DataSet("Lessons");
  
-         /\* selects TableNames tables from the database into the ds DataSet object. \*/
-         void SelectTables(string\[\] TableNames)
+         /* selects TableNames tables from the database into the ds DataSet object. */
+         void SelectTables(string[] TableNames)
          {
              using (DbConnection Con = factory.CreateConnection())
              {
@@ -4560,7 +4560,7 @@ Here is a complete example displaying the lookup usage of the ComboBox and ListB
  
                      foreach (string TableName in TableNames)
                      {
-                         Cmd.CommandText = string.Format("select \* from {0}", TableName);
+                         Cmd.CommandText = string.Format("select * from {0}", TableName);
                          Adapter.FillSchema(ds, SchemaType.Source, TableName);
                          Adapter.Fill(ds, TableName);
                      }
@@ -4570,40 +4570,40 @@ Here is a complete example displaying the lookup usage of the ComboBox and ListB
  
          void Initialize()
          {
-             /\* select the two tables \*/
-             SelectTables(new string\[\] { "COUNTRY", "CITY" });
-             Grid.DataSource = ds.Tables\["CITY"\];
+             /* select the two tables */
+             SelectTables(new string[] { "COUNTRY", "CITY" });
+             Grid.DataSource = ds.Tables["CITY"];
  
  
-             /\* define the "source" of the data for the control \*/
-             cboCountry.DataSource = ds.Tables\["COUNTRY"\];
+             /* define the "source" of the data for the control */
+             cboCountry.DataSource = ds.Tables["COUNTRY"];
              cboCountry.DisplayMember = "NAME";
              cboCountry.ValueMember = "ID";
  
-             /\* define where to "put" the ValueMember value \*/
-             cboCountry.DataBindings.Add("SelectedValue", ds.Tables\["CITY"\], "COUNTRY\_ID");
+             /* define where to "put" the ValueMember value */
+             cboCountry.DataBindings.Add("SelectedValue", ds.Tables["CITY"], "COUNTRY_ID");
  
-             /\* Here is a trick: BindingContexts create binging managers based on datasources. 
+             /* Here is a trick: BindingContexts create binging managers based on datasources. 
                 A binding manager per datasource. So passing here a "different" datasource
                 to the ListBox than the one passed to the ComboBox, creates two distinct 
-                binding managers, although both controls display the same table  \*/
-             /\* define the "source" of the data for the control \*/
+                binding managers, although both controls display the same table  */
+             /* define the "source" of the data for the control */
              lboCountry.DataSource = ds;
              lboCountry.DisplayMember = "COUNTRY.NAME";
              lboCountry.ValueMember = "COUNTRY.ID";
  
-             /\* define where to "put" the ValueMember value \*/
-             lboCountry.DataBindings.Add("SelectedValue", ds.Tables\["CITY"\], "COUNTRY\_ID"); 
+             /* define where to "put" the ValueMember value */
+             lboCountry.DataBindings.Add("SelectedValue", ds.Tables["CITY"], "COUNTRY_ID"); 
  
          } 
  
-         private void cboCountry\_SelectedValueChanged(object sender, EventArgs e)
+         private void cboCountry_SelectedValueChanged(object sender, EventArgs e)
          {
              if (cboCountry.SelectedIndex >= 0)
                  edtComboBoxValue.Text = cboCountry.SelectedValue.ToString();
          }
  
-         private void lboCountry\_SelectedValueChanged(object sender, EventArgs e)
+         private void lboCountry_SelectedValueChanged(object sender, EventArgs e)
          {
              if (lboCountry.SelectedIndex >= 0)
                  edtListBoxValue.Text = lboCountry.SelectedValue.ToString();
@@ -4654,8 +4654,8 @@ Here is how to create and add a lookup column.
 
     DataGridViewComboBoxColumn colLookUp = new DataGridViewComboBoxColumn();
      colLookUp.HeaderText = "Country";
-     colLookUp.DataSource = ds.Tables\["COUNTRY"\];
-     colLookUp.DataPropertyName = "COUNTRY\_ID";
+     colLookUp.DataSource = ds.Tables["COUNTRY"];
+     colLookUp.DataPropertyName = "COUNTRY_ID";
      
      colLookUp.DisplayMember = "NAME";
      colLookUp.ValueMember = "ID";
